@@ -1,7 +1,10 @@
+import java.io.File;
 import java.util.Scanner;
+import java.io.*;
+import java.util.Random;
 
 public class testklass1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner scan = new Scanner(System.in);
         System.out.println("***********************");
@@ -13,6 +16,7 @@ public class testklass1 {
         System.out.println("2. Registrera dig!");
         System.out.println();
        int val = scan.nextInt();
+
 
 
         switch (val) {
@@ -32,16 +36,42 @@ public class testklass1 {
                 System.out.println("Ange ditt personnummer");
                 long personalNumber = scan.nextLong();
 
-                User anvandare1 = new User(firstName, lastName, personalNumber);
-                System.out.println(anvandare1.getFirstName() + " " + anvandare1.getLastName() + " " + anvandare1.getPersonalNumber());
+                /*System.out.println("Ange din roll:");
+                System.out.println("Undergraduate = 1");
+                System.out.println("Postgraduate student = 2");
+                System.out.println("PhD student = 3");
+                System.out.println("Teacher = 4");
+                
+                 */
 
-                break;
+
+
+
+
+
+
+                User anvandare1 = new User(firstName, lastName, personalNumber);
+                System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber());
+               FileWriter fileUser = new FileWriter("Users.txt", true);
+               try (PrintWriter writeUser = new PrintWriter(fileUser)){
+                   writeUser.print(firstName+ " " + " " +  lastName + " " + personalNumber);
+                   writeUser.println();
+
+               }catch (Exception e){System.err.println(e);} //skriver fortfarande in i filen??
+                System.out.println("Registreringen lyckades");
+               //Måste fixa utifall att man gör registreringen fel
+
+
+               break;
+
+
 
         }
 
 
 
 
+
+
     }
 }
-
