@@ -14,6 +14,7 @@ public class testklass1 {
         System.out.println();
        int val = scan.nextInt();
 
+
         switch (val) {
 
             case 1:
@@ -22,7 +23,20 @@ public class testklass1 {
 
             case 2:
                 System.out.println("Registrera");
+                System.out.println("Ange ditt Förnamn");
+                String firstName = scan.next();
+
+                System.out.println("Ange ditt efternamn");
+                String lastName = scan.next();
+
+                System.out.println("Ange ditt personnummer");
+                int personalNumber = scan.nextInt();
+
+                User användare1 = new User(firstName, lastName, personalNumber);
+                System.out.println(användare1.getFirstName() + " " + användare1.getLastName() + " " + användare1.getPersonalNumber());
+
                 break;
+
         }
 
 

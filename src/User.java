@@ -5,6 +5,12 @@ public class User {
     //private int countError;
     //private int countBooks;
 
+    public User(String firstName, String lastName, int personalNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.personalNumber = personalNumber;
+    }
+
     public String getFirstName() {
         return firstName;
     }
