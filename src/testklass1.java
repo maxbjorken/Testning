@@ -5,7 +5,7 @@ public class testklass1 {
         System.out.println("hejsan max");
 
 
-        System.out.println("Kukas xdddddd");
+        System.out.println("Kukas xddddddd");
     }
 }
 
