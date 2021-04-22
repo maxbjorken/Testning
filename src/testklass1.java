@@ -30,10 +30,10 @@ public class testklass1 {
                 String lastName = scan.next();
 
                 System.out.println("Ange ditt personnummer");
-                int personalNumber = scan.nextInt();
+                long personalNumber = scan.nextLong();
 
-                User användare1 = new User(firstName, lastName, personalNumber);
-                System.out.println(användare1.getFirstName() + " " + användare1.getLastName() + " " + användare1.getPersonalNumber());
+                User anvandare1 = new User(firstName, lastName, personalNumber);
+                System.out.println(anvandare1.getFirstName() + " " + anvandare1.getLastName() + " " + anvandare1.getPersonalNumber());
 
                 break;
 
