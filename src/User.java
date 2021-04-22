@@ -1,11 +1,11 @@
 public class User {
     private String firstName;
     private String lastName;
-    private int personalNumber;
+    private long personalNumber;
     //private int countError;
     //private int countBooks;
 
-    public User(String firstName, String lastName, int personalNumber) {
+    public User(String firstName, String lastName, long personalNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.personalNumber = personalNumber;
@@ -27,7 +27,7 @@ public class User {
         this.lastName = lastName;
     }
 
-    public int getPersonalNumber() {
+    public long getPersonalNumber() {
         return personalNumber;
     }
 
