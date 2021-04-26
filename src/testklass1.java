@@ -88,10 +88,10 @@ public class testklass1 {
                    writeUser.print(firstName+ " " + " " +  lastName + " " + personalNumber);
                    writeUser.println();
 
-               }catch (Exception e){System.err.println(e);} //skriver fortfarande in i filen??
+               } //catch (Exception e){System.err.println(e);} //skriver fortfarande in i filen??
                 System.out.println("Registreringen lyckades");
                //Måste fixa utifall att man gör registreringen fel
-
+                System.out.println("tja");
 
                break;
 
