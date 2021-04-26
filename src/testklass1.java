@@ -91,7 +91,7 @@ public class testklass1 {
                } //catch (Exception e){System.err.println(e);} //skriver fortfarande in i filen??
                 System.out.println("Registreringen lyckades");
                //Måste fixa utifall att man gör registreringen fel
-                System.out.println("tja");
+                System.out.println("tjaa");
 
                break;
 
