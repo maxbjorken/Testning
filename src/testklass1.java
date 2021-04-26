@@ -41,7 +41,7 @@ public class testklass1 {
                 System.out.println("Postgraduate student = 2");
                 System.out.println("PhD student = 3");
                 System.out.println("Teacher = 4");
-                
+
                  */
 
 
