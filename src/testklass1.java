@@ -6,6 +6,8 @@ import java.util.Random;
 public class testklass1 {
     public static void main(String[] args) throws IOException {
 
+        Random rand = new Random();
+
         Scanner scan = new Scanner(System.in);
         System.out.println("***********************");
         System.out.println("Välkommen till Hultsfred Stadsbibliotek");
@@ -36,13 +38,42 @@ public class testklass1 {
                 System.out.println("Ange ditt personnummer");
                 long personalNumber = scan.nextLong();
 
-                /*System.out.println("Ange din roll:");
+                System.out.println("Ange din roll:");
                 System.out.println("Undergraduate = 1");
                 System.out.println("Postgraduate student = 2");
                 System.out.println("PhD student = 3");
                 System.out.println("Teacher = 4");
+
+                int val1 = scan.nextInt();
+
+                switch (val1) {
+                    case 1:
+
+                        int id = 1000;
+                        int random1 = rand.nextInt(1000);
+
+                        int totid = id + random1;
+
+                        System.out.println("Här är ditt ID = " + totid);
+
+                        break;
+
+
+                    case 2:
+                        System.out.println("tja");
+                        break;
+
+
+
+
+
+                }
+
+
                 
-                 */
+
+
+
 
 
 
