@@ -54,7 +54,7 @@ public class testklass1 {
 
                         int totid = id + random1;
 
-                        System.out.println("Här är ditt ID = " + totid);
+                        System.out.println("Här är dittt ID = " + totid);
 
                         break;
 
