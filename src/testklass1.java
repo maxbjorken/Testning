@@ -3,9 +3,21 @@ import java.util.Scanner;
 import java.io.*;
 import java.util.Random;
 
-public class testklass1 {
-    public static void main(String[] args) throws IOException {
 
+
+
+
+public class testklass1 {
+
+
+    public static int idrakna(int ett) {
+        Random rand1 = new Random();
+        int random1 = rand1.nextInt(1000);
+        return ett + random1;
+    }
+
+
+    public static void main(String[] args) throws IOException {
         Random rand = new Random();
 
         Scanner scan = new Scanner(System.in);
@@ -49,41 +61,20 @@ public class testklass1 {
                 switch (val1) {
                     case 1:
 
-                        int id = 1000;
-                        int random1 = rand.nextInt(1000);
-
-                        int totid = id + random1;
-
-                        System.out.println("Här är dittt ID = " + totid);
-
+                        System.out.println("Här är ditt ID = " + idrakna(1000));
                         break;
 
-
                     case 2:
-                        int id2 = 2000;
-                        int random2 = rand.nextInt(1000);
 
-                        int totid2 = id2 + random2;
-
-                        System.out.println("Här är dittt ID = " + totid2);
+                        System.out.println("Här är ditt ID = " + idrakna(2000));
                         break;
 
                     case 3:
-                        int id3 = 3000;
-                        int random3 = rand.nextInt(1000);
-
-                        int totid3 = id3 + random3;
-
-                        System.out.println("Här är dittt ID = " + totid3);
+                        System.out.println("Här är ditt ID = " + idrakna(3000));
                         break;
 
                     case 4:
-                        int id4 = 4000;
-                        int random4 = rand.nextInt(1000);
-
-                        int totid4 = id4 + random4;
-
-                        System.out.println("Här är dittt ID = " + totid4);
+                        System.out.println("Här är ditt ID = " + idrakna(4000));
                         break;
 
                 }
