@@ -60,12 +60,31 @@ public class testklass1 {
 
 
                     case 2:
-                        System.out.println("tja");
+                        int id2 = 2000;
+                        int random2 = rand.nextInt(1000);
+
+                        int totid2 = id2 + random2;
+
+                        System.out.println("Här är dittt ID = " + totid2);
                         break;
 
+                    case 3:
+                        int id3 = 3000;
+                        int random3 = rand.nextInt(1000);
 
+                        int totid3 = id3 + random3;
 
+                        System.out.println("Här är dittt ID = " + totid3);
+                        break;
 
+                    case 4:
+                        int id4 = 4000;
+                        int random4 = rand.nextInt(1000);
+
+                        int totid4 = id4 + random4;
+
+                        System.out.println("Här är dittt ID = " + totid4);
+                        break;
 
                 }
 
@@ -88,7 +107,7 @@ public class testklass1 {
                    writeUser.print(firstName+ " " + " " +  lastName + " " + personalNumber);
                    writeUser.println();
 
-               } //catch (Exception e){System.err.println(e);} //skriver fortfarande in i filen??
+               } catch (Exception e){System.out.println("Det gick fel");} //skriver fortfarande in i filen??
                 System.out.println("Registreringen lyckades");
                //Måste fixa utifall att man gör registreringen fel
                 System.out.println("tjaa");
