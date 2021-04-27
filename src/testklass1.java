@@ -93,7 +93,7 @@ public class testklass1 {
 
                 User anvandare1 = new User(firstName, lastName, personalNumber);
                 System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber());
-               FileWriter fileUser = new FileWriter("Users.txt", true);
+               FileWriter fileUser = new FileWriter("src/Users.txt", true);
                try (PrintWriter writeUser = new PrintWriter(fileUser)){
                    writeUser.print(firstName+ " " + " " +  lastName + " " + personalNumber);
                    writeUser.println();
