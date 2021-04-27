@@ -23,7 +23,7 @@ public class testklass1 {
             writeUser.print(id + "  " + fornamn+ " " + " " +  efternamn + " " + personnummer);
             writeUser.println();
     }
-        }
+    }
 
 
     public static void main(String[] args) throws IOException {
