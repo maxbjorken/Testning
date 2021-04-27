@@ -1,4 +1,3 @@
-import java.io.File;
 import java.util.Scanner;
 import java.io.*;
 import java.util.Random;
@@ -15,6 +14,16 @@ public class testklass1 {
         int random1 = rand1.nextInt(1000);
         return ett + random1;
     }
+
+    public static void add(String fornamn, String efternamn, long personnummer, int id) throws IOException {
+        User anvandare1 = new User(fornamn, efternamn, personnummer, id);
+        System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber() + "      " + anvandare1.getId());
+        FileWriter fileUser = new FileWriter("src/Users.txt", true);
+        try (PrintWriter writeUser = new PrintWriter(fileUser)){
+            writeUser.print(id + "  " + fornamn+ " " + " " +  efternamn + " " + personnummer);
+            writeUser.println();
+    }
+        }
 
 
     public static void main(String[] args) throws IOException {
@@ -60,21 +69,34 @@ public class testklass1 {
 
                 switch (val1) {
                     case 1:
+                       int summan = idrakna(1000);
+                        System.out.println("Här är ditt ID = " + summan);
 
-                        System.out.println("Här är ditt ID = " + idrakna(1000));
+                        add(firstName, lastName, personalNumber, summan);
+
+
                         break;
 
                     case 2:
 
-                        System.out.println("Här är ditt ID = " + idrakna(2000));
+                        int summan1 = idrakna(2000);
+                        System.out.println("Här är ditt ID = " + summan1);
+
+                        add(firstName, lastName, personalNumber, summan1);
                         break;
 
                     case 3:
-                        System.out.println("Här är ditt ID = " + idrakna(3000));
+                        int summan2 = idrakna(3000);
+                        System.out.println("Här är ditt ID = " + summan2);
+
+                        add(firstName, lastName, personalNumber, summan2);
                         break;
 
                     case 4:
-                        System.out.println("Här är ditt ID = " + idrakna(4000));
+                        int summan3 = idrakna(4000);
+                        System.out.println("Här är ditt ID = " + summan3);
+
+                        add(firstName, lastName, personalNumber, summan3);
                         break;
 
                 }
@@ -91,7 +113,7 @@ public class testklass1 {
 
 
 
-                User anvandare1 = new User(firstName, lastName, personalNumber);
+             /*   User anvandare1 = new User(firstName, lastName, personalNumber, summ);
                 System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber());
                FileWriter fileUser = new FileWriter("src/Users.txt", true);
                try (PrintWriter writeUser = new PrintWriter(fileUser)){
@@ -103,6 +125,8 @@ public class testklass1 {
                //Måste fixa utifall att man gör registreringen fel
                 System.out.println("tjaa");
 
+
+              */
                break;
 
 
@@ -115,4 +139,7 @@ public class testklass1 {
 
 
     }
+
+
+
 }
