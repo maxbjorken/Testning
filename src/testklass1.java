@@ -1,3 +1,5 @@
+import javax.annotation.processing.Filer;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.io.*;
 import java.util.Random;
@@ -24,10 +26,20 @@ public class testklass1 {
             writeUser.println();
     }
     }
+    public static void addBook(int ISBN, String name) throws IOException {
+        Book nyBok = new Book(ISBN, name);
+        System.out.println(nyBok.getISBN() + nyBok.getName());
+        FileWriter fileBook = new FileWriter("src/Books.txt", true);
+        try (PrintWriter writeBook = new PrintWriter(fileBook)){
+            writeBook.print(ISBN + "  " + name);
+            writeBook.println();
+        }
+    }
 
 
     public static void main(String[] args) throws IOException {
-        Random rand = new Random();
+        File Books = new File("src/Books.txt");
+
 
         Scanner scan = new Scanner(System.in);
         System.out.println("***********************");
@@ -37,15 +49,43 @@ public class testklass1 {
         System.out.println("Välj ditt val (1 eller 2)");
         System.out.println("1. Låna/Lämna tillbaka bok");
         System.out.println("2. Registrera dig!");
+        System.out.println(" ");
+        System.out.println("9. Logga in som bibliotekarie");
         System.out.println();
        int val = scan.nextInt();
+
+
 
 
 
         switch (val) {
 
             case 1:
-            System.out.println("Lämna tillbaka boken eller låna?");
+                System.out.println("1. För att låna bok");
+                System.out.println("2. För att lämna tillbaka bok");
+                int valbok = scan.nextInt();
+                switch (valbok){
+                    case 1:
+                        System.out.println("Vilken bok vill du låna?");
+                        Scanner scanBook = new Scanner(Books);
+                        scanBook.nextLine();
+                    try{
+                        BufferedReader br = new BufferedReader(new FileReader("src/Books.txt"));
+                        String m;
+                        while ((m = br.readLine()) != null){
+                            System.out.println(m);
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                        break;
+                    case 2:
+                        System.out.println("Vilken bok vill du lämna tillbaka?");
+
+                }
+
             break;
 
             case 2:
@@ -99,7 +139,41 @@ public class testklass1 {
                         add(firstName, lastName, personalNumber, summan3);
                         break;
 
+
+
+
+
+
                 }
+            case 9:
+                String user = "Admin";
+                String losen = "123";
+                System.out.println("Ange användarnamn");
+                String input1 = scan.next();
+
+                System.out.println("Ange ditt lösenord");
+                String input2 = scan.next();
+
+                if (input1.equals(user) && input2.equals(losen)) {
+                    System.out.println("Du är nu inloggad");
+                } else {
+                    System.out.println("Fel inloggningsuppgifter, försök igen");
+                }
+                System.out.println("Gör ditt val:");
+                System.out.println("1. För att lägga till bok");
+                System.out.println("2. För att se användare");
+                int valAdmin = scan.nextInt();
+                switch (valAdmin){
+                    case 1:
+
+                    break;
+
+                    case 2:
+
+                        break;
+                }
+
+
 
 
                 
@@ -140,6 +214,8 @@ public class testklass1 {
 
     }
 
+    private static void addBook() {
+    }
 
 
 }
