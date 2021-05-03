@@ -22,7 +22,7 @@ public class testklass1 {
         System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber() + "      " + anvandare1.getId());
         FileWriter fileUser = new FileWriter("src/Users.txt", true);
         try (PrintWriter writeUser = new PrintWriter(fileUser)){
-            writeUser.print(id + "  " + fornamn+ " " + " " +  efternamn + " " + personnummer);
+            writeUser.print(id + "," + fornamn+ "," + "," +  efternamn + "," + personnummer);
             writeUser.println();
     }
     }
@@ -31,7 +31,7 @@ public class testklass1 {
         System.out.println(nyBok.getISBN() + nyBok.getName());
         FileWriter fileBook = new FileWriter("src/Books.txt", true);
         try (PrintWriter writeBook = new PrintWriter(fileBook)){
-            writeBook.print(ISBN + "  " + name);
+            writeBook.print(ISBN + "," + name);
             writeBook.println();
         }
     }
@@ -73,8 +73,28 @@ public class testklass1 {
                     try{
                         BufferedReader br = new BufferedReader(new FileReader("src/Books.txt"));
                         String m;
+
                         while ((m = br.readLine()) != null){
                             System.out.println(m);
+
+
+
+                            /*
+                            try (Scanner output = new Scanner(nyFil)) {
+            output.useDelimiter(",");
+            while (output.hasNextLine()) {
+                String sort = output.next();
+                if (sort.equals("D")) {
+                    String namn = output.next();
+                    String latinsktnamn = output.next();
+                    double vikt = Double.parseDouble(output.next());
+                    String palsfarg = output.next();
+                    boolean vinter = output.nextBoolean();
+                    String late = output.nextLine().replaceFirst(",", "");
+
+                    Daggdjur daggeman = new Daggdjur(namn, latinsktnamn, vikt, palsfarg, vinter, late);
+                    djur.add(daggeman);
+                             */
                         }
 
                     } catch (Exception e) {
