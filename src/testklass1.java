@@ -165,6 +165,9 @@ public class testklass1 {
                 int valAdmin = scan.nextInt();
                 switch (valAdmin){
                     case 1:
+                        System.out.println("Skriv in ISBN");
+                        int ISBN = scan.nextInt();
+
 
                     break;
 
