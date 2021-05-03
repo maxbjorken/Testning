@@ -1,6 +1,9 @@
 public class Book {
     private int ISBN;
     private String name;
+
+    public Book(int isbn, String name) {
+    }
     //private date(?) countDays
 
     public int getISBN() {
