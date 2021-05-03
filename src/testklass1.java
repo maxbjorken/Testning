@@ -44,6 +44,7 @@ public class testklass1 {
         Scanner scan = new Scanner(System.in);
         System.out.println("***********************");
         System.out.println("Välkommen till Hultsfred Stadsbibliotek");
+        System.out.println("lol");
         System.out.println("************************");
 
         System.out.println("Välj ditt val (1 eller 2)");
@@ -109,7 +110,7 @@ public class testklass1 {
 
                 switch (val1) {
                     case 1:
-                       int summan = idrakna(1000);
+                        int summan = idrakna(1000);
                         System.out.println("Här är ditt ID = " + summan);
 
                         add(firstName, lastName, personalNumber, summan);
@@ -143,8 +144,7 @@ public class testklass1 {
 
 
 
-
-                }
+                } break;
             case 9:
                 String user = "Admin";
                 String losen = "123";
