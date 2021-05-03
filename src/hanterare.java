@@ -8,7 +8,7 @@ import java.util.Random;
 
 
 
-public class testklass1 {
+public class hanterare {
 
 
     public static int idrakna(int ett) {
