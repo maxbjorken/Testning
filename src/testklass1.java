@@ -167,7 +167,12 @@ public class testklass1 {
                     case 1:
                         System.out.println("Skriv in ISBN");
                         int ISBN = scan.nextInt();
-                        System.out.println("bög");
+                        System.out.println("Skriv in bokens namn");
+                        String name = scan.next();
+
+                        addBook(ISBN, name);
+
+
 
 
                     break;
