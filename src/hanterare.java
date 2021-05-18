@@ -30,8 +30,10 @@ public class hanterare {
     public static void main(String[] args) throws IOException {
         File Books = new File("src/Books.txt");
         File Users = new File("src/Users.txt");
+        File lana = new File("src/Lana.txt");
         ArrayList<Book> boklista = new ArrayList<>();
         ArrayList<User> userlista = new ArrayList<>();
+        ArrayList<Lend> lendlista = new ArrayList<>();
 
         try (Scanner output = new Scanner(Books)) {
             output.useDelimiter(",");
@@ -87,6 +89,12 @@ public class hanterare {
                                 for (Book b : boklista) {
                                     System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
                                 }
+                                System.out.println("Vilken bok vill du låna? Ange ISBN. Skriv 0 för att avbryta");
+                                int valet = scan.nextInt();
+
+
+
+
                             } catch (Exception e) {
                                 e.printStackTrace();
 
@@ -203,7 +211,7 @@ public class hanterare {
                     }
 
                     for (User u: userlista) {
-                        System.out.println("Namn" + u.getFirstName() +" "+u.getLastName() + " Personnummer: " +
+                        System.out.println("Namn: " + u.getFirstName() +" "+u.getLastName() + " Personnummer: " +
                                 u.getPersonalNumber() + " ID: " + u.getId());
                     }
 
