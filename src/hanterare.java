@@ -10,6 +10,14 @@ import java.util.Random;
 
 public class hanterare {
 
+    public static void add(String fornamn, String efternamn, long personnummer, int id) throws IOException {
+    hanterareStore.add(fornamn,efternamn,personnummer,id);
+        }
+
+    public static void addBook(int ISBN, String name) throws IOException {
+            hanterareStore.addBook(ISBN, name);
+        }
+
 
     public static int idrakna(int ett) {
         Random rand1 = new Random();
@@ -17,24 +25,6 @@ public class hanterare {
         return ett + random1;
     }
 
-    public static void add(String fornamn, String efternamn, long personnummer, int id) throws IOException {
-        User anvandare1 = new User(fornamn, efternamn, personnummer, id);
-        System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber() + "      " + anvandare1.getId());
-        FileWriter fileUser = new FileWriter("src/Users.txt", true);
-        try (PrintWriter writeUser = new PrintWriter(fileUser)){
-            writeUser.print(id + "," + fornamn+ "," +  efternamn + "," + personnummer);
-            writeUser.println();
-    }
-    }
-    public static void addBook(int ISBN, String name) throws IOException {
-        Book nyBok = new Book(ISBN, name);
-        System.out.println(nyBok.getISBN() + nyBok.getName());
-        FileWriter fileBook = new FileWriter("src/Books.txt", true);
-        try (PrintWriter writeBook = new PrintWriter(fileBook)){
-            writeBook.print(ISBN + "," + name);
-            writeBook.println();
-        }
-    }
 
 
     public static void main(String[] args) throws IOException {
@@ -42,10 +32,9 @@ public class hanterare {
 
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("***********************");
+        System.out.println("**************************************");
         System.out.println("Välkommen till Hultsfred Stadsbibliotek");
-        System.out.println("lol");
-        System.out.println("************************");
+        System.out.println("**************************************");
 
         System.out.println("Välj ditt val (1 eller 2)");
         System.out.println("1. Låna/Lämna tillbaka bok");
@@ -54,9 +43,6 @@ public class hanterare {
         System.out.println("9. Logga in som bibliotekarie");
         System.out.println();
        int val = scan.nextInt();
-
-
-
 
 
         switch (val) {
@@ -136,7 +122,6 @@ public class hanterare {
 
                         add(firstName, lastName, personalNumber, summan);
 
-
                         break;
 
                     case 2:
@@ -145,6 +130,7 @@ public class hanterare {
                         System.out.println("Här är ditt ID = " + summan1);
 
                         add(firstName, lastName, personalNumber, summan1);
+
                         break;
 
                     case 3:
@@ -160,10 +146,6 @@ public class hanterare {
 
                         add(firstName, lastName, personalNumber, summan3);
                         break;
-
-
-
-
 
                 } break;
             case 9:
