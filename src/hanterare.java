@@ -1,5 +1,6 @@
 import javax.annotation.processing.Filer;
 import java.sql.SQLOutput;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
@@ -17,6 +18,9 @@ public class hanterare {
 
     public static void addBook(int ISBN, String name) throws IOException {
         hanterareStore.addBook(ISBN, name);
+    }
+    public static void addLoan(int id, int isbn) throws IOException {
+        hanterareStore.addLoan(id,isbn);
     }
 
 
@@ -43,7 +47,6 @@ public class hanterare {
 
                 Book bok = new Book(sort, isbn);
                 boklista.add(bok);
-
             }
         }
 
@@ -84,16 +87,33 @@ public class hanterare {
                     int valbok = scan.nextInt();
                     switch (valbok) {
                         case 1:
-
+                           int rakning = 0;
                             try {
                                 for (Book b : boklista) {
                                     System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
                                 }
-                                System.out.println("Vilken bok vill du låna? Ange ISBN. Skriv 0 för att avbryta");
-                                int valet = scan.nextInt();
+                                while (rakning == 0) {
+                                    System.out.println("Vilken bok vill du låna? Ange ISBN. Skriv 0 för att avbryta");
+                                    int valet = scan.nextInt();
 
+                                    if (valet == 0) {
+                                        rakning++;
+                                    } else {
+                                        for (Book b : boklista) {
+                                            if (b.getISBN() == valet) {
 
+                                                System.out.println("Skriv ditt id");
+                                                int id1 = scan.nextInt();
+                                                int nyIsbn = Integer.parseInt(String.valueOf(valet));
+                                                addLoan(nyIsbn, id1);
 
+                                                rakning++;
+                                            }
+                                        }
+
+                                    }
+                                    System.out.println("Boken finns inte eller så har du skrivit fel! Försök igen");
+                                }
 
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -101,50 +121,20 @@ public class hanterare {
                             }
 
 
-                        /*BufferedReader br = new BufferedReader(new FileReader("src/Books.txt"));
-
-                        String m;
-                        while ((m = br.readLine()) != null) {
-                            System.out.println(m);
-                            System.out.println("Vilken bok vill du låna?");
-                        }
-                        String ny = scan.next();
-                        while ((m = br.readLine()) != null) {
-                            if (ny.equals(m)) {
-                                System.out.println(m);
-                            }
-                        }
-
-                         */
 
 
 
 
 
-
-
-                            /*
-                            try (Scanner output = new Scanner(nyFil)) {
-            output.useDelimiter(",");
-            while (output.hasNextLine()) {
-                String sort = output.next();
-                if (sort.equals("D")) {
-                    String namn = output.next();
-                    String latinsktnamn = output.next();
-                    double vikt = Double.parseDouble(output.next());
-                    String palsfarg = output.next();
-                    boolean vinter = output.nextBoolean();
-                    String late = output.nextLine().replaceFirst(",", "");
-
-                    Daggdjur daggeman = new Daggdjur(namn, latinsktnamn, vikt, palsfarg, vinter, late);
-                    djur.add(daggeman);
-                             */
 
 
                             break;
                         case 2:
                             System.out.println("Vilken bok vill du lämna tillbaka?");
                             System.out.println("magge");
+
+
+
 
                     }
 
@@ -313,4 +303,20 @@ public class hanterare {
                 }
 
                        */
+   /*BufferedReader br = new BufferedReader(new FileReader("src/Books.txt"));
+
+                        String m;
+                        while ((m = br.readLine()) != null) {
+                            System.out.println(m);
+                            System.out.println("Vilken bok vill du låna?");
+                        }
+                        String ny = scan.next();
+                        while ((m = br.readLine()) != null) {
+                            if (ny.equals(m)) {
+                                System.out.println(m);
+                            }
+                        }
+
+                         */
+
 

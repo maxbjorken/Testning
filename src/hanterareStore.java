@@ -1,6 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 
 public class hanterareStore {
 
@@ -21,6 +22,19 @@ public class hanterareStore {
             writeBook.print(ISBN + "," + name);
             writeBook.println();
         }
+    }
+
+
+    public static void addLoan(int id, int ISBN) throws IOException {
+        Lend nyLend = new Lend(id, ISBN);
+        System.out.println(nyLend.id + nyLend.ISBN);
+        FileWriter writeLend = new FileWriter("src/Lana.txt", true);
+        try (PrintWriter pw = new PrintWriter(writeLend)){
+            pw.print(id + "," + ISBN);
+            pw.println();
+        }
+
+
     }
 
 }
