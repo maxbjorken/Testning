@@ -9,7 +9,7 @@ public class User {
     //private int countError;
     //private int countBooks;
 
-    public User(String firstName, String lastName, long personalNumber, int id) {
+    public User(int id, String firstName, String lastName, long personalNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.personalNumber = personalNumber;

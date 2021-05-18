@@ -4,8 +4,8 @@ import java.io.PrintWriter;
 
 public class hanterareStore {
 
-    public static void add(String fornamn, String efternamn, long personnummer, int id) throws IOException {
-        User anvandare1 = new User(fornamn, efternamn, personnummer, id);
+    public static void add(int id, String fornamn, String efternamn, long personnummer) throws IOException {
+        User anvandare1 = new User(id, fornamn, efternamn, personnummer);
         System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber() + "      " + anvandare1.getId());
         FileWriter fileUser = new FileWriter("src/Users.txt", true);
         try (PrintWriter writeUser = new PrintWriter(fileUser)){

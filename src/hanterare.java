@@ -11,13 +11,13 @@ import java.util.Random;
 
 public class hanterare {
 
-    public static void add(String fornamn, String efternamn, long personnummer, int id) throws IOException {
-    hanterareStore.add(fornamn,efternamn,personnummer,id);
-        }
+    public static void add(int id, String fornamn, String efternamn, long personnummer) throws IOException {
+        hanterareStore.add(id, fornamn, efternamn, personnummer);
+    }
 
     public static void addBook(int ISBN, String name) throws IOException {
-            hanterareStore.addBook(ISBN, name);
-        }
+        hanterareStore.addBook(ISBN, name);
+    }
 
 
     public static int idrakna(int ett) {
@@ -27,16 +27,17 @@ public class hanterare {
     }
 
 
-
     public static void main(String[] args) throws IOException {
         File Books = new File("src/Books.txt");
+        File Users = new File("src/Users.txt");
         ArrayList<Book> boklista = new ArrayList<>();
+        ArrayList<User> userlista = new ArrayList<>();
 
         try (Scanner output = new Scanner(Books)) {
             output.useDelimiter(",");
             while (output.hasNextLine()) {
                 int isbn = Integer.parseInt(output.next());
-                String sort = output.nextLine().replaceFirst(",","");
+                String sort = output.nextLine().replaceFirst(",", "");
 
                 Book bok = new Book(sort, isbn);
                 boklista.add(bok);
@@ -44,41 +45,54 @@ public class hanterare {
             }
         }
 
+        try (Scanner output1 = new Scanner(Users)) {
+            output1.useDelimiter(",");
+            while (output1.hasNextLine()) {
+                int id = Integer.parseInt(output1.next());
+                String first = output1.next();
+                String last = output1.next();
+                long pers = Long.parseLong(output1.nextLine().replaceFirst(",", ""));
+
+                User user = new User(id, first, last, pers);
+                userlista.add(user);
+
+            }
 
 
+            Scanner scan = new Scanner(System.in);
+            System.out.println("**************************************");
+            System.out.println("Välkommen till Hultsfred Stadsbibliotek");
+            System.out.println("**************************************");
+
+            System.out.println("Välj ditt val (1 eller 2)");
+            System.out.println("1. Låna/Lämna tillbaka bok");
+            System.out.println("2. Registrera dig!");
+            System.out.println("3  visa böcker");
+            System.out.println(" ");
+            System.out.println("9. Logga in som bibliotekarie");
+            System.out.println();
+            int val = scan.nextInt();
 
 
+            switch (val) {
 
-        Scanner scan = new Scanner(System.in);
-        System.out.println("**************************************");
-        System.out.println("Välkommen till Hultsfred Stadsbibliotek");
-        System.out.println("**************************************");
+                case 1:
+                    System.out.println("1. För att låna bok");
+                    System.out.println("2. För att lämna tillbaka bok");
+                    int valbok = scan.nextInt();
+                    switch (valbok) {
+                        case 1:
 
-        System.out.println("Välj ditt val (1 eller 2)");
-        System.out.println("1. Låna/Lämna tillbaka bok");
-        System.out.println("2. Registrera dig!");
-        System.out.println("3  visa böcker");
-        System.out.println(" ");
-        System.out.println("9. Logga in som bibliotekarie");
-        System.out.println();
-       int val = scan.nextInt();
+                            try {
+                                for (Book b : boklista) {
+                                    System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+
+                            }
 
 
-        switch (val) {
-
-            case 1:
-                System.out.println("1. För att låna bok");
-                System.out.println("2. För att lämna tillbaka bok");
-                int valbok = scan.nextInt();
-                switch (valbok){
-                    case 1:
-
-                   //     Scanner scanBook = new Scanner(Books);
-                     //   scanBook.nextLine();
-
-                    try {
-
-                        System.out.println(boklista);
                         /*BufferedReader br = new BufferedReader(new FileReader("src/Books.txt"));
 
                         String m;
@@ -117,132 +131,119 @@ public class hanterare {
                     Daggdjur daggeman = new Daggdjur(namn, latinsktnamn, vikt, palsfarg, vinter, late);
                     djur.add(daggeman);
                              */
-                        } catch (Exception e) {
-                        e.printStackTrace();
+
+
+                            break;
+                        case 2:
+                            System.out.println("Vilken bok vill du lämna tillbaka?");
+                            System.out.println("magge");
 
                     }
 
+                    break;
 
-                        break;
-                    case 2:
-                        System.out.println("Vilken bok vill du lämna tillbaka?");
-                        System.out.println("magge");
+                case 2:
+                    System.out.println("Registrera");
+                    System.out.println("Ange ditt Förnamn");
+                    String firstName = scan.next();
 
-                }
+                    System.out.println("Ange ditt efternamn");
+                    String lastName = scan.next();
 
-            break;
+                    System.out.println("Ange ditt personnummer");
+                    long personalNumber = scan.nextLong();
 
-            case 2:
-                System.out.println("Registrera");
-                System.out.println("Ange ditt Förnamn");
-                String firstName = scan.next();
+                    System.out.println("Ange din roll:");
+                    System.out.println("Undergraduate = 1");
+                    System.out.println("Postgraduate student = 2");
+                    System.out.println("PhD student = 3");
+                    System.out.println("Teacher = 4");
 
-                System.out.println("Ange ditt efternamn");
-                String lastName = scan.next();
+                    int val1 = scan.nextInt();
 
-                System.out.println("Ange ditt personnummer");
-                long personalNumber = scan.nextLong();
+                    switch (val1) {
+                        case 1:
+                            int summan = idrakna(1000);
+                            System.out.println("Här är ditt ID = " + summan);
 
-                System.out.println("Ange din roll:");
-                System.out.println("Undergraduate = 1");
-                System.out.println("Postgraduate student = 2");
-                System.out.println("PhD student = 3");
-                System.out.println("Teacher = 4");
+                            add(summan, firstName, lastName, personalNumber);
 
-                int val1 = scan.nextInt();
+                            break;
 
-                switch (val1) {
-                    case 1:
-                        int summan = idrakna(1000);
-                        System.out.println("Här är ditt ID = " + summan);
+                        case 2:
 
-                        add(firstName, lastName, personalNumber, summan);
+                            int summan1 = idrakna(2000);
+                            System.out.println("Här är ditt ID = " + summan1);
 
-                        break;
+                            add(summan1, firstName, lastName, personalNumber);
 
-                    case 2:
+                            break;
 
-                        int summan1 = idrakna(2000);
-                        System.out.println("Här är ditt ID = " + summan1);
+                        case 3:
+                            int summan2 = idrakna(3000);
+                            System.out.println("Här är ditt ID = " + summan2);
 
-                        add(firstName, lastName, personalNumber, summan1);
+                            add(summan2, firstName, lastName, personalNumber);
+                            break;
 
-                        break;
+                        case 4:
+                            int summan3 = idrakna(4000);
+                            System.out.println("Här är ditt ID = " + summan3);
 
-                    case 3:
-                        int summan2 = idrakna(3000);
-                        System.out.println("Här är ditt ID = " + summan2);
+                            add(summan3, firstName, lastName, personalNumber);
+                            break;
 
-                        add(firstName, lastName, personalNumber, summan2);
-                        break;
+                    }
+                    break;
 
-                    case 4:
-                        int summan3 = idrakna(4000);
-                        System.out.println("Här är ditt ID = " + summan3);
+                case 3:
 
-                        add(firstName, lastName, personalNumber, summan3);
-                        break;
+                    for (Book b : boklista) {
+                        System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
+                    }
 
-                } break;
-
-            case 3:
-
-              for (Book b: boklista ) {
-                  System.out.println("ISBN: " + b.getISBN() +" "+b.getName());
-
-
-              }
-
-
-                break;
-            case 9:
-                String user = "Admin";
-                String losen = "123";
-                System.out.println("Ange användarnamn");
-                String input1 = scan.next();
-
-                System.out.println("Ange ditt lösenord");
-                String input2 = scan.next();
-
-                if (input1.equals(user) && input2.equals(losen)) {
-                    System.out.println("Du är nu inloggad");
-                } else {
-                    System.out.println("Fel inloggningsuppgifter, försök igen");
-                }
-                System.out.println("Gör ditt val:");
-                System.out.println("1. För att lägga till bok");
-                System.out.println("2. För att se användare");
-                int valAdmin = scan.nextInt();
-                switch (valAdmin){
-                    case 1:
-                        System.out.println("Skriv in ISBN");
-                        int ISBN = scan.nextInt();
-                        System.out.println("Skriv in bokens namn");
-                        String name = scan.next();
-
-                        addBook(ISBN, name);
-
-
+                    for (User u: userlista) {
+                        System.out.println("Namn" + u.getFirstName() +" "+u.getLastName() + " Personnummer: " +
+                                u.getPersonalNumber() + " ID: " + u.getId());
+                    }
 
 
                     break;
+                case 9:
+                    String user = "Admin";
+                    String losen = "123";
+                    System.out.println("Ange användarnamn");
+                    String input1 = scan.next();
 
-                    case 2:
-                        try{
-                            BufferedReader br = new BufferedReader(new FileReader("src/Users.txt"));
-                            String m;
+                    System.out.println("Ange ditt lösenord");
+                    String input2 = scan.next();
 
-                            while ((m = br.readLine()) != null){
-                                System.out.println(m);
+                    if (input1.equals(user) && input2.equals(losen)) {
+                        System.out.println("Du är nu inloggad");
+                    } else {
+                        System.out.println("Fel inloggningsuppgifter, försök igen");
+                    }
+                    System.out.println("Gör ditt val:");
+                    System.out.println("1. För att lägga till bok");
+                    System.out.println("2. För att se användare");
+                    int valAdmin = scan.nextInt();
+                    switch (valAdmin) {
+                        case 1:
+                            System.out.println("Skriv in ISBN");
+                            int ISBN = scan.nextInt();
+                            System.out.println("Skriv in bokens namn");
+                            scan.nextLine();
+                            String name = scan.nextLine();
 
-                            }
+                            addBook(ISBN, name);
 
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
 
-                        break;
-                }
+                            break;
+
+                        case 2:
+                            for (Book b : boklista) {
+                                System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
+
 
 
 
@@ -272,21 +273,36 @@ public class hanterare {
 
 
               */
-               break;
+                                break;
 
 
+                            }
 
+
+                    }
+
+
+            }
         }
-
-
-
-
-
-
     }
-
-
-
-
 }
+
+
+                      /*  try{
+                            BufferedReader br = new BufferedReader(new FileReader("src/Users.txt"));
+                            String m;
+
+                            while ((m = br.readLine()) != null){
+                                System.out.println(m);
+
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
+                }
+
+                       */
 
