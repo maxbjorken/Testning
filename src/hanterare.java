@@ -53,15 +53,27 @@ public class hanterare {
                 int valbok = scan.nextInt();
                 switch (valbok){
                     case 1:
-                        System.out.println("Vilken bok vill du låna?");
+
                         Scanner scanBook = new Scanner(Books);
                         scanBook.nextLine();
-                    try{
+                    try {
                         BufferedReader br = new BufferedReader(new FileReader("src/Books.txt"));
                         String m;
-
-                        while ((m = br.readLine()) != null){
+                        while ((m = br.readLine()) != null) {
                             System.out.println(m);
+                            System.out.println("Vilken bok vill du låna?");
+                        }
+
+                        String ny = scan.next();
+                        while ((m = br.readLine()) != null) {
+                            if (m.equals(ny)) {
+                                System.out.println("Lyckades");
+                            }
+                        }
+
+
+
+
 
 
 
@@ -81,11 +93,11 @@ public class hanterare {
                     Daggdjur daggeman = new Daggdjur(namn, latinsktnamn, vikt, palsfarg, vinter, late);
                     djur.add(daggeman);
                              */
-                        }
-
-                    } catch (Exception e) {
+                        } catch (Exception e) {
                         e.printStackTrace();
+
                     }
+
 
                         break;
                     case 2:
@@ -242,3 +254,4 @@ public class hanterare {
 
 
 }
+

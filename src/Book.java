@@ -2,7 +2,7 @@ public class Book {
     private int ISBN;
     private String name;
 
-    public Book(int isbn, String name) {
+    public Book(String name, int ISBN) {
     }
     //private date(?) countDays
 
