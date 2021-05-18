@@ -104,6 +104,7 @@ public class hanterare {
                         break;
                     case 2:
                         System.out.println("Vilken bok vill du lämna tillbaka?");
+                        System.out.println("mage");
 
                 }
 
