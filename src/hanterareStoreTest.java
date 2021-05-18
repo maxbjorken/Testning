@@ -2,9 +2,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class hanterareTest {
+class hanterareStoreTest {
 
     @Test
-    void idrakna() {
+    void add() {
+    }
+
+    @Test
+    void addBook() {
     }
 }
