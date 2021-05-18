@@ -22,7 +22,7 @@ public class hanterare {
         System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber() + "      " + anvandare1.getId());
         FileWriter fileUser = new FileWriter("src/Users.txt", true);
         try (PrintWriter writeUser = new PrintWriter(fileUser)){
-            writeUser.print(id + "," + fornamn+ "," + "," +  efternamn + "," + personnummer);
+            writeUser.print(id + "," + fornamn+ "," +  efternamn + "," + personnummer);
             writeUser.println();
     }
     }
@@ -198,6 +198,18 @@ public class hanterare {
                     break;
 
                     case 2:
+                        try{
+                            BufferedReader br = new BufferedReader(new FileReader("src/Users.txt"));
+                            String m;
+
+                            while ((m = br.readLine()) != null){
+                                System.out.println(m);
+
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                         break;
                 }
@@ -243,8 +255,7 @@ public class hanterare {
 
     }
 
-    private static void addBook() {
-    }
+
 
 
 }
