@@ -18,7 +18,7 @@ public class hanterareStore {
         System.out.println(nyBok.getISBN() + nyBok.getName());
         FileWriter fileBook = new FileWriter("src/Books.txt", true);
         try (PrintWriter writeBook = new PrintWriter(fileBook)){
-            writeBook.print(name + "," + ISBN);
+            writeBook.print(ISBN + "," + name);
             writeBook.println();
         }
     }

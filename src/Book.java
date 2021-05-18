@@ -3,6 +3,8 @@ public class Book {
     private String name;
 
     public Book(String name, int ISBN) {
+        this.ISBN=ISBN;
+        this.name=name;
     }
     //private date(?) countDays
 

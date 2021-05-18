@@ -1,5 +1,6 @@
 import javax.annotation.processing.Filer;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
 import java.util.Random;
@@ -29,6 +30,23 @@ public class hanterare {
 
     public static void main(String[] args) throws IOException {
         File Books = new File("src/Books.txt");
+        ArrayList<Book> boklista = new ArrayList<>();
+
+        try (Scanner output = new Scanner(Books)) {
+            output.useDelimiter(",");
+            while (output.hasNextLine()) {
+                int isbn = Integer.parseInt(output.next());
+                String sort = output.nextLine().replaceFirst(",","");
+
+                Book bok = new Book(sort, isbn);
+                boklista.add(bok);
+
+            }
+        }
+
+
+
+
 
 
         Scanner scan = new Scanner(System.in);
@@ -39,6 +57,7 @@ public class hanterare {
         System.out.println("Välj ditt val (1 eller 2)");
         System.out.println("1. Låna/Lämna tillbaka bok");
         System.out.println("2. Registrera dig!");
+        System.out.println("3  visa böcker");
         System.out.println(" ");
         System.out.println("9. Logga in som bibliotekarie");
         System.out.println();
@@ -54,22 +73,27 @@ public class hanterare {
                 switch (valbok){
                     case 1:
 
-                        Scanner scanBook = new Scanner(Books);
-                        scanBook.nextLine();
+                   //     Scanner scanBook = new Scanner(Books);
+                     //   scanBook.nextLine();
+
                     try {
-                        BufferedReader br = new BufferedReader(new FileReader("src/Books.txt"));
+
+                        System.out.println(boklista);
+                        /*BufferedReader br = new BufferedReader(new FileReader("src/Books.txt"));
+
                         String m;
                         while ((m = br.readLine()) != null) {
                             System.out.println(m);
                             System.out.println("Vilken bok vill du låna?");
                         }
-
                         String ny = scan.next();
                         while ((m = br.readLine()) != null) {
-                            if (m.equals(ny)) {
-                                System.out.println("Lyckades");
+                            if (ny.equals(m)) {
+                                System.out.println(m);
                             }
                         }
+
+                         */
 
 
 
@@ -160,6 +184,17 @@ public class hanterare {
                         break;
 
                 } break;
+
+            case 3:
+
+              for (Book b: boklista ) {
+                  System.out.println("ISBN: " + b.getISBN() +" "+b.getName());
+
+
+              }
+
+
+                break;
             case 9:
                 String user = "Admin";
                 String losen = "123";
