@@ -31,6 +31,9 @@ public class hanterare {
         return ett + random1;
     }
 
+    public static void taBordAnv(String filepath, String removeTerm, int posOfId, String delimeter) {
+        hanterareStore.taBortAnv(filepath, removeTerm, posOfId, delimeter);
+    }
 
     public static void main(String[] args) throws IOException {
         File Books = new File("src/Books.txt");
@@ -101,7 +104,7 @@ public class hanterare {
                                 int rakning = 0;
                                 try {
                                     for (Book b : boklista) {
-                                        System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " Bok-id: " + b.getUniktid());
+                                        System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " Bok-id " + b.getUniktid());
                                     }
                                     while (rakning == 0) {
                                         System.out.println("Vilken bok vill du låna? Ange Bok-id. Skriv 0 för att avbryta");
@@ -245,13 +248,10 @@ public class hanterare {
                             System.out.println("Du är nu inloggad");
                         } else {
                             System.out.println("Fel inloggningsuppgifter, försök igen");
-                            break;
                         }
                         System.out.println("Gör ditt val:");
                         System.out.println("1. För att lägga till bok");
-                        System.out.println("2. För att se alla böcker");
-                        System.out.println("3. För att se alla användare");
-                        System.out.println("4. Lägg till ny användare");
+                        System.out.println("2. För att se användare");
                         int valAdmin = scan.nextInt();
                         switch (valAdmin) {
                             case 1:
@@ -274,7 +274,9 @@ public class hanterare {
 
                             case 2:
                                 for (Book b : boklista) {
-                                    System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " id: " + b.getUniktid());
+                                    System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
+
+
                                 }
                                 break;
 
@@ -286,7 +288,17 @@ public class hanterare {
 
                             case 4:
                                 System.out.println("hej");
+                                System.out.println();
+                                break;
+
+                            case 5:
+                                //taBordAnv("src/Users.txt", "1258", 1, ",");
+                                break;
                         }
+
+
+
+
 
 
                 }

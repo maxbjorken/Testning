@@ -1,6 +1,6 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 
 public class hanterareStore {
@@ -9,16 +9,17 @@ public class hanterareStore {
         User anvandare1 = new User(id, fornamn, efternamn, personnummer);
         System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber() + "      " + anvandare1.getId());
         FileWriter fileUser = new FileWriter("src/Users.txt", true);
-        try (PrintWriter writeUser = new PrintWriter(fileUser)){
-            writeUser.print(id + "," + fornamn+ "," +  efternamn + "," + personnummer);
+        try (PrintWriter writeUser = new PrintWriter(fileUser)) {
+            writeUser.print(id + "," + fornamn + "," + efternamn + "," + personnummer);
             writeUser.println();
         }
     }
+
     public static void addBook(int uniktid, int ISBN, String name) throws IOException {
         Book nyBok = new Book(uniktid, name, ISBN);
         System.out.println(nyBok.getISBN() + nyBok.getName());
         FileWriter fileBook = new FileWriter("src/Books.txt", true);
-        try (PrintWriter writeBook = new PrintWriter(fileBook)){
+        try (PrintWriter writeBook = new PrintWriter(fileBook)) {
             writeBook.print(uniktid + "," + ISBN + "," + name);
             writeBook.println();
         }
@@ -29,7 +30,7 @@ public class hanterareStore {
         Lend nyLend = new Lend(id, ISBN);
         System.out.println(nyLend.id + nyLend.ISBN);
         FileWriter writeLend = new FileWriter("src/Lana.txt", true);
-        try (PrintWriter pw = new PrintWriter(writeLend)){
+        try (PrintWriter pw = new PrintWriter(writeLend)) {
             pw.print(id + "," + ISBN);
             pw.println();
         }
@@ -37,4 +38,57 @@ public class hanterareStore {
 
     }
 
+    public static void taBortAnv(String filepath, String removeTerm, int posOfId, String delimeter) {
+        int position = posOfId - 1;
+        String tempFile = "temp.txt";
+        File oldFile = new File(filepath);
+        File newFile = new File(tempFile);
+
+        String currentLine;
+        String[] data;
+
+        try {
+
+            FileWriter fw = new FileWriter(tempFile, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+
+            FileReader fr = new FileReader(filepath);
+            BufferedReader br = new BufferedReader(fr);
+
+            while ((currentLine = br.readLine()) != null) {
+
+                data = currentLine.split(",");
+                if (!(data[position].equalsIgnoreCase(String.valueOf(removeTerm)))) {
+                    pw.println(currentLine);
+                }
+            }
+            pw.flush();
+            pw.close();
+            fr.close();
+            br.close();
+            bw.close();
+            fw.close();
+
+            if (oldFile.exists()) {
+                oldFile.delete();
+            }
+
+            File dump = new File(filepath);
+            newFile.renameTo(dump);
+
+        } catch (Exception e) {
+            System.out.println("Fel");
+
+        }
+
+    }
 }
+
+
+
+
+
+
+
+
