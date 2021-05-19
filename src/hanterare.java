@@ -101,7 +101,7 @@ public class hanterare {
                                 int rakning = 0;
                                 try {
                                     for (Book b : boklista) {
-                                        System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
+                                        System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " Bok-id " + b.getUniktid());
                                     }
                                     while (rakning == 0) {
                                         System.out.println("Vilken bok vill du låna? Ange Bok-id. Skriv 0 för att avbryta");
