@@ -14,12 +14,12 @@ public class hanterareStore {
             writeUser.println();
         }
     }
-    public static void addBook(int ISBN, String name) throws IOException {
-        Book nyBok = new Book(name, ISBN);
+    public static void addBook(int uniktid, int ISBN, String name) throws IOException {
+        Book nyBok = new Book(uniktid,name, ISBN);
         System.out.println(nyBok.getISBN() + nyBok.getName());
         FileWriter fileBook = new FileWriter("src/Books.txt", true);
         try (PrintWriter writeBook = new PrintWriter(fileBook)){
-            writeBook.print(ISBN + "," + name);
+            writeBook.print(uniktid + "," + ISBN + "," + name);
             writeBook.println();
         }
     }

@@ -2,9 +2,20 @@ public class Book {
     private int ISBN;
     private String name;
 
-    public Book(String name, int ISBN) {
+    public int getUniktid() {
+        return uniktid;
+    }
+
+    public void setUniktid(int uniktid) {
+        this.uniktid = uniktid;
+    }
+
+    private int uniktid;
+
+    public Book(int uniktid, String name, int ISBN) {
         this.ISBN=ISBN;
         this.name=name;
+        this.uniktid=uniktid;
     }
     //private date(?) countDays
 
