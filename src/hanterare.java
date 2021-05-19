@@ -111,19 +111,30 @@ public class hanterare {
                                             rakning++;
                                         } else {
                                             for (Book b : boklista) {
-                                                if (b.getISBN() == valet) {
+                                                if (b.getUniktid() == valet) {
+                                                    for (Book bok : boklista) {
+                                                        if (b.getISBN() == bok.getISBN()) {
+                                                            System.out.println("Skriv ditt ID");
+                                                            int id1 = scan.nextInt();
 
-                                                    System.out.println("Skriv ditt id");
-                                                    int id1 = scan.nextInt();
-                                                    int nyIsbn = Integer.parseInt(String.valueOf(valet));
-                                                    addLoan(nyIsbn, id1);
+                                                            addLoan(b.getISBN(), id1);
+                                                            rakning++;
+                                                        }
+                                                    }
 
-                                                    rakning++;
+
+                                                    // int nyIsbn = Integer.parseInt(String.valueOf(valet));
+
+
+
                                                 }
+
+
                                             }
 
+                                        } if (rakning == 0) {
+                                            System.out.println("Boken finns inte eller så har du skrivit fel! Försök igen");
                                         }
-                                        System.out.println("Boken finns inte eller så har du skrivit fel! Försök igen");
                                     }
 
                                 } catch (Exception e) {
