@@ -101,7 +101,7 @@ public class hanterare {
                                 int rakning = 0;
                                 try {
                                     for (Book b : boklista) {
-                                        System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " Bok-id " + b.getUniktid());
+                                        System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " Bok-id: " + b.getUniktid());
                                     }
                                     while (rakning == 0) {
                                         System.out.println("Vilken bok vill du låna? Ange Bok-id. Skriv 0 för att avbryta");
@@ -234,10 +234,12 @@ public class hanterare {
                             System.out.println("Du är nu inloggad");
                         } else {
                             System.out.println("Fel inloggningsuppgifter, försök igen");
+                            break;
                         }
                         System.out.println("Gör ditt val:");
                         System.out.println("1. För att lägga till bok");
                         System.out.println("2. För att se användare");
+                        System.out.println("3. Lägg till ny användare");
                         int valAdmin = scan.nextInt();
                         switch (valAdmin) {
                             case 1:
