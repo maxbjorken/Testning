@@ -31,6 +31,10 @@ public class hanterare {
         return ett + random1;
     }
 
+    public static void taBortAnv(String filepath, String removeTerm, int posOfId, String delimeter) throws IOException {
+        hanterareStore.taBortAnv(filepath,removeTerm,posOfId,",");
+    }
+
 
     public static void main(String[] args) throws IOException {
         File Books = new File("src/Books.txt");
@@ -231,6 +235,15 @@ public class hanterare {
                                     u.getPersonalNumber() + " ID: " + u.getId());
                         }
 
+                        String absolute = Users.getAbsolutePath();
+
+                        // Display the file path of the file object
+                        // and also the file path of absolute file
+                        System.out.println("Original  path: "
+                                + Users.getPath());
+                        System.out.println("Absolute  path: "
+                                + absolute);
+
 
                         break;
                     case 9:
@@ -286,6 +299,15 @@ public class hanterare {
                                 break;
 
                             case 4:
+
+                                System.out.println("Vad är personens förnamn?");
+                                String firstName1 = scan.next();
+                                System.out.println("Vad heter personen i efternamn?");
+                                String lastName1 = scan.next();
+                                System.out.println("Vad har personen för personnummer?");
+                                long personalNumber1 = scan.nextLong();
+
+
                                 System.out.println("Vilken roll har den nya användaren?: ");
                                 System.out.println(" ");
                                 System.out.println("Undergraduate = 1");
@@ -300,7 +322,7 @@ public class hanterare {
                                         int summan = idrakna(1000);
                                         System.out.println("Här är ditt ID = " + summan);
 
-                                        add(summan, firstName, lastName, personalNumber);
+                                        add(summan, firstName1, lastName1, personalNumber1);
 
                                         break;
 
@@ -309,7 +331,7 @@ public class hanterare {
                                         int summan1 = idrakna(2000);
                                         System.out.println("Här är ditt ID = " + summan1);
 
-                                        add(summan1, firstName, lastName, personalNumber);
+                                        add(summan1, firstName1, lastName1, personalNumber1);
 
                                         break;
 
@@ -317,16 +339,20 @@ public class hanterare {
                                         int summan2 = idrakna(3000);
                                         System.out.println("Här är ditt ID = " + summan2);
 
-                                        add(summan2, firstName, lastName, personalNumber);
+                                        add(summan2, firstName1, lastName1, personalNumber1);
                                         break;
 
                                     case 4:
                                         int summan3 = idrakna(4000);
                                         System.out.println("Här är ditt ID = " + summan3);
 
-                                        add(summan3, firstName, lastName, personalNumber);
+                                        add(summan3, firstName1, lastName1, personalNumber1);
                                         break;
                                 }
+
+
+                            case 5:
+                                taBortAnv("C:\\Users\\46723\\IdeaProjects\\Testning\\src\\Users.txt", "4639", 1, ",");
 
                         }
 
