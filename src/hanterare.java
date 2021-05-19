@@ -275,14 +275,13 @@ public class hanterare {
                             case 2:
                                 for (Book b : boklista) {
                                     System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " id: " + b.getUniktid());
-
-                                    break;
                                 }
+                                break;
                             case 3:
                                 for (User u : userlista) {
                                     System.out.println("Namn: " + u.getFirstName() + "      Efternamn: " + u.getLastName() + "      Personnummer: " + u.getPersonalNumber() + "      id: " + u.getId());
-                               break;
                                 }
+                                break;
 
                         }
 
