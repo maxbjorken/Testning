@@ -31,9 +31,6 @@ public class hanterare {
         return ett + random1;
     }
 
-    public static void taBordAnv(String filepath, String removeTerm, int posOfId, String delimeter) {
-        hanterareStore.taBortAnv(filepath, removeTerm, posOfId, delimeter);
-    }
 
     public static void main(String[] args) throws IOException {
         File Books = new File("src/Books.txt");
@@ -104,9 +101,10 @@ public class hanterare {
                                 int rakning = 0;
                                 try {
                                     for (Book b : boklista) {
-                                        System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " Bok-id " + b.getUniktid());
+                                        System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " Bok-id: " + b.getUniktid());
                                     }
                                     while (rakning == 0) {
+                                        System.out.println(" ");
                                         System.out.println("Vilken bok vill du låna? Ange Bok-id. Skriv 0 för att avbryta");
                                         int valet = scan.nextInt();
 
@@ -248,10 +246,13 @@ public class hanterare {
                             System.out.println("Du är nu inloggad");
                         } else {
                             System.out.println("Fel inloggningsuppgifter, försök igen");
+                            break;
                         }
                         System.out.println("Gör ditt val:");
                         System.out.println("1. För att lägga till bok");
-                        System.out.println("2. För att se användare");
+                        System.out.println("2. För att se alla böcker");
+                        System.out.println("3. För att se alla användare");
+                        System.out.println("4. Lägg till ny användare");
                         int valAdmin = scan.nextInt();
                         switch (valAdmin) {
                             case 1:
@@ -274,9 +275,7 @@ public class hanterare {
 
                             case 2:
                                 for (Book b : boklista) {
-                                    System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
-
-
+                                    System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " id: " + b.getUniktid());
                                 }
                                 break;
 
@@ -287,18 +286,49 @@ public class hanterare {
                                 break;
 
                             case 4:
-                                System.out.println("hej");
-                                System.out.println();
-                                break;
+                                System.out.println("Vilken roll har den nya användaren?: ");
+                                System.out.println(" ");
+                                System.out.println("Undergraduate = 1");
+                                System.out.println("Postgraduate student = 2");
+                                System.out.println("PhD student = 3");
+                                System.out.println("Teacher = 4");
 
-                            case 5:
-                                //taBordAnv("src/Users.txt", "1258", 1, ",");
-                                break;
+
+                                int regval1 = scan.nextInt();
+                                switch (regval1) {
+                                    case 1:
+                                        int summan = idrakna(1000);
+                                        System.out.println("Här är ditt ID = " + summan);
+
+                                        add(summan, firstName, lastName, personalNumber);
+
+                                        break;
+
+                                    case 2:
+
+                                        int summan1 = idrakna(2000);
+                                        System.out.println("Här är ditt ID = " + summan1);
+
+                                        add(summan1, firstName, lastName, personalNumber);
+
+                                        break;
+
+                                    case 3:
+                                        int summan2 = idrakna(3000);
+                                        System.out.println("Här är ditt ID = " + summan2);
+
+                                        add(summan2, firstName, lastName, personalNumber);
+                                        break;
+
+                                    case 4:
+                                        int summan3 = idrakna(4000);
+                                        System.out.println("Här är ditt ID = " + summan3);
+
+                                        add(summan3, firstName, lastName, personalNumber);
+                                        break;
+                                }
+
                         }
-
-
-
-
 
 
                 }
