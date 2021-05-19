@@ -104,6 +104,7 @@ public class hanterare {
                                         System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " Bok-id: " + b.getUniktid());
                                     }
                                     while (rakning == 0) {
+                                        System.out.println(" ");
                                         System.out.println("Vilken bok vill du låna? Ange Bok-id. Skriv 0 för att avbryta");
                                         int valet = scan.nextInt();
 
@@ -285,7 +286,48 @@ public class hanterare {
                                 break;
 
                             case 4:
-                                System.out.println("hej");
+                                System.out.println("Vilken roll har den nya användaren?: ");
+                                System.out.println(" ");
+                                System.out.println("Undergraduate = 1");
+                                System.out.println("Postgraduate student = 2");
+                                System.out.println("PhD student = 3");
+                                System.out.println("Teacher = 4");
+
+
+                                int regval1 = scan.nextInt();
+                                switch (regval1) {
+                                    case 1:
+                                        int summan = idrakna(1000);
+                                        System.out.println("Här är ditt ID = " + summan);
+
+                                        add(summan, firstName, lastName, personalNumber);
+
+                                        break;
+
+                                    case 2:
+
+                                        int summan1 = idrakna(2000);
+                                        System.out.println("Här är ditt ID = " + summan1);
+
+                                        add(summan1, firstName, lastName, personalNumber);
+
+                                        break;
+
+                                    case 3:
+                                        int summan2 = idrakna(3000);
+                                        System.out.println("Här är ditt ID = " + summan2);
+
+                                        add(summan2, firstName, lastName, personalNumber);
+                                        break;
+
+                                    case 4:
+                                        int summan3 = idrakna(4000);
+                                        System.out.println("Här är ditt ID = " + summan3);
+
+                                        add(summan3, firstName, lastName, personalNumber);
+                                        break;
+                                }
+
                         }
 
 
