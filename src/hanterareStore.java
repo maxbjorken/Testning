@@ -15,7 +15,7 @@ public class hanterareStore {
         }
     }
     public static void addBook(int uniktid, int ISBN, String name) throws IOException {
-        Book nyBok = new Book(uniktid,name, ISBN);
+        Book nyBok = new Book(uniktid, name, ISBN);
         System.out.println(nyBok.getISBN() + nyBok.getName());
         FileWriter fileBook = new FileWriter("src/Books.txt", true);
         try (PrintWriter writeBook = new PrintWriter(fileBook)){

@@ -138,7 +138,11 @@ public class hanterare {
                                 int valavbok = scan.nextInt();
                                 for (Lend b : lendlista) {
                                     if (b.getId() == valavbok) {
-                                        System.out.println("Namn: " + b.g() + "   ISBN: " + b.getISBN());
+                                        for (Book bo : boklista) {
+                                            if (bo.getISBN() == b.getISBN())
+
+                                                System.out.println("Namn: " + bo.getName() + "   ISBN: " + b.getISBN());
+                                        }
                                     }
                                 }
 
