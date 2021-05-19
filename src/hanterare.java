@@ -249,8 +249,9 @@ public class hanterare {
                         }
                         System.out.println("Gör ditt val:");
                         System.out.println("1. För att lägga till bok");
-                        System.out.println("2. För att se användare");
-                        System.out.println("3. Lägg till ny användare");
+                        System.out.println("2. För att se alla böcker");
+                        System.out.println("3. För att se alla användare");
+                        System.out.println("4. Lägg till ny användare");
                         int valAdmin = scan.nextInt();
                         switch (valAdmin) {
                             case 1:
@@ -273,11 +274,15 @@ public class hanterare {
 
                             case 2:
                                 for (Book b : boklista) {
-                                    System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
+                                    System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " id: " + b.getUniktid());
 
-
+                                    break;
                                 }
-
+                            case 3:
+                                for (User u : userlista) {
+                                    System.out.println("Namn: " + u.getFirstName() + "      Efternamn: " + u.getLastName() + "      Personnummer: " + u.getPersonalNumber() + "      id: " + u.getId());
+                               break;
+                                }
 
                         }
 
