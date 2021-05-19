@@ -140,7 +140,6 @@ public class hanterare {
                                     if (b.getId() == valavbok) {
                                         for (Book bo : boklista) {
                                             if (bo.getISBN() == b.getISBN())
-
                                                 System.out.println("Namn: " + bo.getName() + "   ISBN: " + b.getISBN());
                                         }
                                     }
@@ -262,37 +261,6 @@ public class hanterare {
                             case 2:
                                 for (Book b : boklista) {
                                     System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
-
-
-
-
-
-                
-
-
-
-
-
-
-
-
-
-
-             /*   User anvandare1 = new User(firstName, lastName, personalNumber, summ);
-                System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber());
-               FileWriter fileUser = new FileWriter("src/Users.txt", true);
-               try (PrintWriter writeUser = new PrintWriter(fileUser)){
-                   writeUser.print(firstName+ " " + " " +  lastName + " " + personalNumber);
-                   writeUser.println();
-
-               } catch (Exception e){System.out.println("Det gick fel");} //skriver fortfarande in i filen??
-                System.out.println("Registreringen lyckades");
-               //Måste fixa utifall att man gör registreringen fel
-                System.out.println("tjaa");
-
-
-              */
-                                    break;
 
 
                                 }
