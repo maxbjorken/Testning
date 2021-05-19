@@ -277,12 +277,15 @@ public class hanterare {
                                     System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " id: " + b.getUniktid());
                                 }
                                 break;
+
                             case 3:
                                 for (User u : userlista) {
                                     System.out.println("Namn: " + u.getFirstName() + "      Efternamn: " + u.getLastName() + "      Personnummer: " + u.getPersonalNumber() + "      id: " + u.getId());
                                 }
                                 break;
 
+                            case 4:
+                                System.out.println("hej");
                         }
 
 
