@@ -119,6 +119,7 @@ public class hanterare {
                                 System.out.println(" ");
                                 System.out.println("Vilken bok vill du låna? Ange Bok-id. Skriv 0 för att avbryta");
                                 int valet = scan.nextInt();
+                                int rakna = 0;
 
                                 if (valet == 0) {
                                     rakning++;
@@ -129,6 +130,35 @@ public class hanterare {
                                                 if (b.getISBN() == bok.getISBN()) {
                                                     System.out.println("Skriv ditt ID");
                                                     int id1 = scan.nextInt();
+                                                    for(Lend l : lendlista){
+                                                        if (l.getId() == id1) {
+                                                            rakna++;
+                                                        }
+                                                        if (id1 > 999 && id1 < 2000){
+                                                            if (rakna >= 3){
+                                                                System.out.println("Du har för många lån");
+                                                                System.exit(0);
+                                                            }
+                                                        }else if (id1 > 1999 && id1 < 3000) {
+                                                            if (rakna >= 5) {
+                                                                System.out.println("Du har för många lån");
+                                                                System.exit(0);
+                                                            }
+                                                        }else if (id1 > 2999 && id1 < 4000) {
+                                                            if (rakna >= 7) {
+                                                                System.out.println("Du har för många lån");
+                                                                System.exit(0);
+                                                            }
+                                                        }else if (id1 > 3999 && id1 < 5000) {
+                                                            if (rakna >= 5) {
+                                                                System.out.println("Du har för många lån");
+                                                                System.exit(0);
+                                                            }
+                                                        }
+
+
+
+                                                    }
 
                                                     addLoan(b.getISBN(), id1);
                                                     rakning++;
