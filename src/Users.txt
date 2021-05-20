@@ -1,3 +1,2 @@
 2918,Max,Björk,980511
-3736,Anton,Johansson,901020
-4639,Kennet,Pajas,700231
+1923,Nisse,Ful,921123

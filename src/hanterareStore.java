@@ -2,6 +2,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.SecureRandom;
+import java.util.concurrent.TimeUnit;
 
 public class hanterareStore {
 
@@ -47,7 +49,7 @@ public class hanterareStore {
 
 
     public static void taBortAnv(String filepath, String removeTerm, int posOfId, String delimeter) throws IOException {
-        int position = posOfId -1;
+        int position = posOfId - 1;
         String tempFile = "temp.txt";
         File oldFile = new File(filepath);
         File newFile = new File(tempFile);
@@ -55,20 +57,19 @@ public class hanterareStore {
         String currentLine;
         String[] data;
 
-        try{
+        try {
 
-            FileWriter fw = new FileWriter(tempFile,true);
+            FileWriter fw = new FileWriter(tempFile, true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
 
             FileReader fr = new FileReader(filepath);
             BufferedReader br = new BufferedReader(fr);
 
-            while ((currentLine = br.readLine()) != null){
+            while ((currentLine = br.readLine()) != null) {
 
                 data = currentLine.split(",");
-                if (!(data[position].equalsIgnoreCase(String.valueOf(removeTerm))))
-                {
+                if (!(data[position].equalsIgnoreCase(String.valueOf(removeTerm)))) {
                     pw.println(currentLine);
                 }
             }
@@ -80,12 +81,17 @@ public class hanterareStore {
             fw.close();
 
 
-            oldFile.delete();
+            try {
+                Files.delete(Paths.get(filepath));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             File dump = new File(filepath);
             newFile.renameTo(dump);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Fel");
+        }
     }
 }
 

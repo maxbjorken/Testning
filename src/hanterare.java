@@ -53,8 +53,11 @@ public class hanterare {
 
                 Book bok = new Book(uniktid, sort, isbn);
                 boklista.add(bok);
+
             }
+            output.close();
         }
+
 
         try (Scanner output1 = new Scanner(Users)) {
             output1.useDelimiter(",");
@@ -66,7 +69,9 @@ public class hanterare {
 
                 User user = new User(id, first, last, pers);
                 userlista.add(user);
+
             }
+            output1.close();
 
             try (Scanner output2 = new Scanner(lana)) {
                 output2.useDelimiter(",");
@@ -76,8 +81,9 @@ public class hanterare {
 
                     Lend lend = new Lend(id, isbn);
                     lendlista.add(lend);
-                }
 
+                }
+                output2.close();
 
                 Scanner scan = new Scanner(System.in);
                 System.out.println("**************************************");
@@ -352,7 +358,7 @@ public class hanterare {
 
 
                             case 5:
-                                taBortAnv("C:\\Users\\46723\\IdeaProjects\\Testning\\src\\Users.txt", "4639", 1, ",");
+                                taBortAnv("src\\Users.txt", "3736", 1, ",");
 
                         }
 
