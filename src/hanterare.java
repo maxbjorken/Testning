@@ -32,7 +32,7 @@ public class hanterare {
     }
 
     public static void taBortAnv(String filepath, String removeTerm, int posOfId, String delimeter) throws IOException {
-        hanterareStore.taBortAnv(filepath,removeTerm,posOfId,",");
+       // hanterareStore.taBortAnv(filepath,removeTerm,posOfId,",");
     }
 
 
