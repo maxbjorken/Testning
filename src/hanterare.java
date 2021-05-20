@@ -123,6 +123,7 @@ public class hanterare {
 
                 System.out.println("1. För att låna bok");
                 System.out.println("2. För att lämna tillbaka bok");
+                System.out.println("3. För att ta bort dig själv som användare");
                 int valbok = scan.nextInt();
                 switch (valbok) {
                     case 1:
@@ -218,10 +219,16 @@ public class hanterare {
                         System.out.println("Vilken bok vill du lämna tillbaka?");
                         int lamnatillbakabok = scan.nextInt();
 
+                    case 3:
+                        System.out.println("Ange ditt ID för att radera din profil");
+                        int valavID = scan.nextInt();
+                        taBortAnv("src\\Users.txt", valavID, 1, ",");
+
 
                 }
 
                 break;
+
 
             case 2:
                 System.out.println("Registrera");
@@ -233,6 +240,14 @@ public class hanterare {
 
                 System.out.println("Ange ditt personnummer");
                 long personalNumber = scan.nextLong();
+
+                for (User l : userlista){
+                    if (l.getFirstName().equals(firstName) && l.getLastName().equals(lastName) && l.getPersonalNumber() == personalNumber){
+                        System.out.println("Denna användare är redan registrerad");
+                        System.out.println("Kontakta administratör");
+                        System.exit(0);
+                    }
+                }
 
                 System.out.println("Ange din roll:");
                 System.out.println("Undergraduate = 1");
