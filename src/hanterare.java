@@ -105,6 +105,22 @@ public class hanterare {
         switch (val) {
 
             case 1:
+                String inlogg = "User";
+                String loseninlogg = "123";
+                System.out.println("Ange dina inloggningsuppgifter");
+                System.out.println("Ange ditt användarnamn");
+                String inloggAnv = scan.next();
+                System.out.println("Ange ditt lösenord");
+                String losenAnv = scan.next();
+
+
+                if (inloggAnv.equals(inlogg) && losenAnv.equals(loseninlogg)) {
+                    System.out.println("Du är nu inloggad");
+                } else {
+                    System.out.println("Fel inloggningsuppgifter, försök igen");
+                    break;
+                }
+
                 System.out.println("1. För att låna bok");
                 System.out.println("2. För att lämna tillbaka bok");
                 int valbok = scan.nextInt();
