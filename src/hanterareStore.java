@@ -1,11 +1,61 @@
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.security.SecureRandom;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class hanterareStore {
+
+    public static void lasaInBocker(ArrayList<Book> lista) throws FileNotFoundException {
+        File Books = new File("src/Books.txt");
+        try (
+                Scanner output = new Scanner(Books)) {
+            output.useDelimiter(",");
+            while (output.hasNextLine()) {
+                int uniktid = Integer.parseInt(output.next());
+                int isbn = Integer.parseInt(output.next());
+                String sort = output.nextLine().replaceFirst(",", "");
+
+                Book bok = new Book(uniktid, sort, isbn);
+                lista.add(bok);
+            }
+        }
+    }
+
+    public static ArrayList<User> lasaInAnvandare(ArrayList<User> lista) throws FileNotFoundException {
+
+        File Users = new File("src/Users.txt");
+        try (Scanner output1 = new Scanner(Users)) {
+            output1.useDelimiter(",");
+            while (output1.hasNextLine()) {
+                int id = Integer.parseInt(output1.next());
+                String first = output1.next();
+                String last = output1.next();
+                long pers = Long.parseLong(output1.nextLine().replaceFirst(",", ""));
+
+                User user = new User(id, first, last, pers);
+                lista.add(user);
+
+            }
+        } return (lista);
+    }
+
+    public static ArrayList<Lend> lasaInLan(ArrayList<Lend> lista) throws FileNotFoundException {
+        File lana = new File("src/Lana.txt");
+        try (Scanner output2 = new Scanner(lana)) {
+            output2.useDelimiter(",");
+            while (output2.hasNextLine()) {
+                int uniktid = Integer.parseInt(output2.next());
+                int isbn = Integer.parseInt(output2.next());
+                int id = Integer.parseInt(output2.nextLine().replaceFirst(",", ""));
+
+                Lend lend = new Lend(uniktid, id, isbn);
+                lista.add(lend);
+
+            }
+        } return (lista);
+
+    }
 
     public static void add(int id, String fornamn, String efternamn, long personnummer) throws IOException {
         User anvandare1 = new User(id, fornamn, efternamn, personnummer);
@@ -20,7 +70,7 @@ public class hanterareStore {
 
     public static void addBook(int uniktid, int ISBN, String name) throws IOException {
         Book nyBok = new Book(uniktid, name, ISBN);
-        System.out.println(nyBok.getISBN() + nyBok.getName());
+      //  System.out.println(nyBok.getISBN() + nyBok.getName());
         FileWriter fileBook = new FileWriter("src/Books.txt", true);
         try (PrintWriter writeBook = new PrintWriter(fileBook)) {
             writeBook.print(uniktid + "," + ISBN + "," + name);
@@ -30,12 +80,12 @@ public class hanterareStore {
     }
 
 
-    public static void addLoan(int id, int ISBN) throws IOException {
+    public static void addLoan(int uniktID, int id, int ISBN) throws IOException {
         Lend nyLend = new Lend(id, ISBN);
-        System.out.println(nyLend.id + nyLend.ISBN);
+       // System.out.println(nyLend.id + nyLend.ISBN);
         FileWriter writeLend = new FileWriter("src/Lana.txt", true);
         try (PrintWriter pw = new PrintWriter(writeLend)) {
-            pw.print(id + "," + ISBN);
+            pw.print(uniktID + "," + id + "," + ISBN);
             pw.println();
             pw.close();
         }

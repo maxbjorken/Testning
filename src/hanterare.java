@@ -20,8 +20,8 @@ public class hanterare {
         hanterareStore.addBook(uniktid, ISBN, name);
     }
 
-    public static void addLoan(int id, int isbn) throws IOException {
-        hanterareStore.addLoan(id, isbn);
+    public static void addLoan(int uniktID, int id, int isbn) throws IOException {
+        hanterareStore.addLoan(uniktID,id, isbn);
     }
 
 
@@ -37,55 +37,14 @@ public class hanterare {
 
 
     public static void main(String[] args) throws IOException {
-        File Books = new File("src/Books.txt");
-        File Users = new File("src/Users.txt");
-        File lana = new File("src/Lana.txt");
+
         ArrayList<Book> boklista = new ArrayList<>();
         ArrayList<User> userlista = new ArrayList<>();
         ArrayList<Lend> lendlista = new ArrayList<>();
 
-        try (Scanner output = new Scanner(Books)) {
-            output.useDelimiter(",");
-            while (output.hasNextLine()) {
-                int uniktid = Integer.parseInt(output.next());
-                int isbn = Integer.parseInt(output.next());
-                String sort = output.nextLine().replaceFirst(",", "");
-
-                Book bok = new Book(uniktid, sort, isbn);
-                boklista.add(bok);
-
-            }
-            output.close();
-        }
-
-
-        try (Scanner output1 = new Scanner(Users)) {
-            output1.useDelimiter(",");
-            while (output1.hasNextLine()) {
-                int id = Integer.parseInt(output1.next());
-                String first = output1.next();
-                String last = output1.next();
-                long pers = Long.parseLong(output1.nextLine().replaceFirst(",", ""));
-
-                User user = new User(id, first, last, pers);
-                userlista.add(user);
-
-
-            }
-        }
-
-
-        try (Scanner output2 = new Scanner(lana)) {
-            output2.useDelimiter(",");
-            while (output2.hasNextLine()) {
-                int isbn = Integer.parseInt(output2.next());
-                int id = Integer.parseInt(output2.nextLine().replaceFirst(",", ""));
-
-                Lend lend = new Lend(id, isbn);
-                lendlista.add(lend);
-
-            }
-        }
+        hanterareStore.lasaInBocker(boklista);
+       hanterareStore.lasaInAnvandare(userlista);
+       hanterareStore.lasaInLan(lendlista);
 
         Scanner scan = new Scanner(System.in);
         System.out.println("**************************************");
@@ -177,7 +136,7 @@ public class hanterare {
 
                                                     }
 
-                                                    addLoan(b.getISBN(), id1);
+                                                    addLoan(b.getUniktid(), b.getISBN(), id1);
                                                     rakning++;
                                                 }
                                             }
@@ -211,19 +170,21 @@ public class hanterare {
                             if (b.getId() == valavbok) {
                                 for (Book bo : boklista) {
                                     if (bo.getISBN() == b.getISBN())
-                                        System.out.println("Namn: " + bo.getName() + "   ISBN: " + b.getISBN());
+                                        System.out.println("Namn: " + bo.getName() + "   ISBN: " + b.getISBN() + " Bok-ID: " + bo.getUniktid());
                                 }
                             }
                         }
 
-                        System.out.println("Vilken bok vill du lämna tillbaka?");
+                        System.out.println("Vilken bok vill du lämna tillbaka? Ange Bok-ID");
                         int lamnatillbakabok = scan.nextInt();
+                        taBortAnv("src\\Lana.txt", lamnatillbakabok, 1, ",");
+                        break;
+
 
                     case 3:
                         System.out.println("Ange ditt ID för att radera din profil");
                         int valavID = scan.nextInt();
                         taBortAnv("src\\Users.txt", valavID, 1, ",");
-
 
                 }
 
@@ -298,19 +259,14 @@ public class hanterare {
                     System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
                 }
 
-                for (User u : userlista) {
+               /* for (User u : userlista) {
                     System.out.println("Namn: " + u.getFirstName() + " " + u.getLastName() + " Personnummer: " +
                             u.getPersonalNumber() + " ID: " + u.getId());
                 }
 
-                String absolute = Users.getAbsolutePath();
+                */
 
-                // Display the file path of the file object
-                // and also the file path of absolute file
-                System.out.println("Original  path: "
-                        + Users.getPath());
-                System.out.println("Absolute  path: "
-                        + absolute);
+
 
 
                 break;
