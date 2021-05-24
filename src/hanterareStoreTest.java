@@ -21,7 +21,7 @@ class hanterareStoreTest {
 
 
 @Test
-    void testAddBooks() {
+    void test() {
         hanterareStoreStub stub = new hanterareStoreStub();
         hanterare cut = new hanterare(stub);
 

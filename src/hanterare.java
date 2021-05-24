@@ -214,7 +214,7 @@ return nyttID;
 
                                 System.out.println("Vilken bok vill du lämna tillbaka? Ange Bok-ID");
                                 int lamnatillbakabok = scan.nextInt();
-                                System.out.println("Hur många dagar sen var det du lånade boken?");
+                                System.out.println("Hur många dagar sen var det du lånade boken?  ");
                                 int antalDagar = scan.nextInt();
 
                                 if (antalDagar >= 15) {
@@ -313,9 +313,8 @@ return nyttID;
 
                /* for (User u : userlista) {
                     System.out.println("Namn: " + u.getFirstName() + " " + u.getLastName() + " Personnummer: " +
-                            u.getPersonalNumber() + " ID: " + u.getId());
+                        u.getPersonalNumber() + " ID: " + u.getId());
                 }
-
                 */
 
 
