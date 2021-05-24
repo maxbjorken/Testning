@@ -101,7 +101,7 @@ return nyttID;
         switch (val) {
 
             case 1:
-                logger.info("Inlogging i system");
+                logger.info("Inlogging i system ");
                 String inlogg = "User";
                 String loseninlogg = "123";
                 System.out.println("Ange dina inloggningsuppgifter");
