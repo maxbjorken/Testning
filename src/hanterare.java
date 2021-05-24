@@ -307,7 +307,7 @@ return nyttID;
             case 3:
 
                 for (Book b : boklista) {
-                    System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
+                    System.out.println("Namn : " + b.getName() + "   ISBN: " + b.getISBN());
                 }
 
                /* for (User u : userlista) {
