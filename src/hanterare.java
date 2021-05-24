@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.Scanner;
 import java.io.*;
 import java.util.Random;
+//import java.util.logging.Logger;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -99,6 +101,7 @@ return nyttID;
         switch (val) {
 
             case 1:
+                logger.info("Inlogging i system");
                 String inlogg = "User";
                 String loseninlogg = "123";
                 System.out.println("Ange dina inloggningsuppgifter");
@@ -106,6 +109,7 @@ return nyttID;
                 String inloggAnv = scan.next();
                 System.out.println("Ange ditt lösenord");
                 String losenAnv = scan.next();
+                logger.debug(String.format("Anvandarnamn = %s", inloggAnv));
 
 
                 if (inloggAnv.equals(inlogg) && losenAnv.equals(loseninlogg)) {
@@ -114,6 +118,7 @@ return nyttID;
                     System.out.println("Fel inloggningsuppgifter, försök igen");
                     break;
                 }
+                logger.info("Avslut inloggning i systemet");
 
                 System.out.println("1. För att låna bok");
                 System.out.println("2. För att lämna tillbaka bok");
