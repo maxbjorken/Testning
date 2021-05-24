@@ -17,3 +17,17 @@
 2021-05-24 14:54:59,975 INFO hanterare [main] Inlogging i system
 2021-05-24 14:55:03,309 DEBUG hanterare [main] Anvandarnamn = User
 2021-05-24 14:55:03,310 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-24 14:58:27,375 INFO hanterare [main] Inlogging i system
+2021-05-24 14:58:29,993 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-24 14:58:29,994 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-24 14:58:32,348 INFO hanterare [main] Start: Lån av bok
+2021-05-24 14:58:38,478 DEBUG hanterare [main] Val av bok=1050
+2021-05-24 14:58:42,600 DEBUG hanterare [main] ID på låntagare=4312
+2021-05-24 14:58:42,608 INFO hanterare [main] Avslut: Lån av bok
+2021-05-24 15:03:44,906 INFO hanterare [main] Inlogging i system
+2021-05-24 15:03:47,909 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-24 15:03:47,910 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-24 15:03:52,445 INFO hanterare [main] Start: Lån av bok
+2021-05-24 15:03:56,918 DEBUG hanterare [main] Val av bok = 1025
+2021-05-24 15:04:06,170 DEBUG hanterare [main] ID på låntagare=3110
+2021-05-24 15:04:06,171 ERROR hanterare [main] För många lån
