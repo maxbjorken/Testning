@@ -94,6 +94,7 @@ return nyttID;
         System.out.println("3  visa böcker");
         System.out.println(" ");
         System.out.println("9. Logga in som bibliotekarie");
+        System.out.println("magge");
         System.out.println();
         int val = scan.nextInt();
 
