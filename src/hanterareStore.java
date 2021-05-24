@@ -87,9 +87,10 @@ int antal = 0;
             while (output2.hasNextLine()) {
                 int uniktid = Integer.parseInt(output2.next());
                 int isbn = Integer.parseInt(output2.next());
-                int id = Integer.parseInt(output2.nextLine().replaceFirst(",", ""));
+                int id = Integer.parseInt(output2.next());
+                String bokNamn = output2.nextLine().replaceFirst(",","");
 
-                Lend lend = new Lend(uniktid, id, isbn);
+                Lend lend = new Lend(uniktid, id, isbn, bokNamn);
                 lista.add(lend);
 
             }
@@ -103,7 +104,7 @@ int antal = 0;
         try (Scanner output3 = new Scanner(varning)) {
             output3.useDelimiter(",");
             while (output3.hasNextLine()) {
-                int antal = Integer.parseInt(output3.next().replaceFirst(",",""));
+                int antal = Integer.parseInt(output3.nextLine());
 
                 Warnings warnings = new Warnings(antal);
                 lista.add(warnings);
@@ -135,12 +136,12 @@ int antal = 0;
     }
 
 
-    public static void addLoan(int uniktID, int id, int ISBN) throws IOException {
+    public static void addLoan(int uniktID, int id, int ISBN, String namn) throws IOException {
         Lend nyLend = new Lend(id, ISBN);
        // System.out.println(nyLend.id + nyLend.ISBN);
         FileWriter writeLend = new FileWriter("src/Lana.txt", true);
         try (PrintWriter pw = new PrintWriter(writeLend)) {
-            pw.print(uniktID + "," + id + "," + ISBN);
+            pw.print(uniktID + "," + id + "," + ISBN + "," + namn);
             pw.println();
             pw.close();
         }
@@ -152,6 +153,7 @@ int antal = 0;
         try (PrintWriter pw = new PrintWriter(writeWarning)) {
             pw.print(id);
             pw.println();
+            pw.close();
         }
     }
 

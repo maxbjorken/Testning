@@ -4,6 +4,24 @@ public class Lend {
     int ISBN;
     int uniktid;
 
+    public int getUniktid() {
+        return uniktid;
+    }
+
+    public void setUniktid(int uniktid) {
+        this.uniktid = uniktid;
+    }
+
+    public String getNamn() {
+        return namn;
+    }
+
+    public void setNamn(String namn) {
+        this.namn = namn;
+    }
+
+    String namn;
+
     public Lend() {};
 
     public Lend(int id, int ISBN) {
@@ -12,10 +30,11 @@ public class Lend {
     }
 
 
-    public Lend(int uniktid, int id, int isbn) {
+    public Lend(int uniktid, int id, int isbn, String namn) {
         this.uniktid=uniktid;
         this.id = id;
         this.ISBN = isbn;
+        this.namn=namn;
     }
 
     public int getId() {

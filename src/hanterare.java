@@ -50,8 +50,8 @@ return nyttID;
         hanterareStore.addBook(uniktid, ISBN, name);
     }
 
-    public static void addLoan(int uniktID, int id, int isbn) throws IOException {
-        hanterareStore.addLoan(uniktID,id, isbn);
+    public static void addLoan(int uniktID, int id, int isbn, String namn) throws IOException {
+        hanterareStore.addLoan(uniktID,id, isbn, namn);
     }
 
 
@@ -150,39 +150,38 @@ return nyttID;
                                                     System.out.println("Skriv ditt ID");
                                                     int id1 = scan.nextInt();
                                                     logger.debug(String.format("id1=%d", id1));
-                                                    for(Lend l : lendlista){
+                                                    for (Lend l : lendlista) {
                                                         if (l.getId() == id1) {
                                                             rakna++;
                                                         }
-                                                        if (id1 > 999 && id1 < 2000){
-                                                            if (rakna >= 3){
+                                                        if (id1 > 999 && id1 < 2000) {
+                                                            if (rakna >= 3) {
                                                                 System.out.println("Du har för många lån");
                                                                 logger.error("För många lån");
                                                                 System.exit(0);
                                                             }
-                                                        }else if (id1 > 1999 && id1 < 3000) {
+                                                        } else if (id1 > 1999 && id1 < 3000) {
                                                             if (rakna >= 5) {
                                                                 System.out.println("Du har för många lån");
                                                                 System.exit(0);
                                                             }
-                                                        }else if (id1 > 2999 && id1 < 4000) {
+                                                        } else if (id1 > 2999 && id1 < 4000) {
                                                             if (rakna >= 7) {
                                                                 System.out.println("Du har för många lån");
                                                                 System.exit(0);
                                                             }
-                                                        }else if (id1 > 3999 && id1 < 5000) {
+                                                        } else if (id1 > 3999 && id1 < 5000) {
                                                             if (rakna >= 5) {
                                                                 System.out.println("Du har för många lån");
                                                                 System.exit(0);
                                                             }
                                                         }
 
-
-
                                                     }
-
-                                                    addLoan(b.getUniktid(), b.getISBN(), id1);
+                                                    addLoan(b.getUniktid(), b.getISBN(), id1, b.getName());
                                                     rakning++;
+
+                                                    taBortAnv("src\\Books.txt", b.getUniktid(), 1, ",");
                                                 }
                                             }
                                         }
@@ -191,7 +190,8 @@ return nyttID;
                                 if (rakning == 0) {
                                     System.out.println("Boken finns inte eller så har du skrivit fel! Försök igen");
                                 }
-                            } logger.info("Ended");
+                            }
+                            logger.info("Ended");
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -199,29 +199,37 @@ return nyttID;
 
                         break;
                     case 2:
+                        int var1 = 0;
+                        String var2 = null;
                         System.out.println("Vilket är ditt ID?");
                         int dittID = scan.nextInt();
                         for (Lend b : lendlista) {
                             if (b.getId() == dittID) {
-                                for (Book bo : boklista) {
-                                    if (bo.getISBN() == b.getISBN())
-                                        System.out.println("Namn: " + bo.getName() + "   ISBN: " + b.getISBN() + " Bok-ID: " + bo.getUniktid());
-                                }
+                                System.out.println("Namn: " + b.getNamn() + "   ISBN: " + b.getISBN() + " Bok-ID: " + b.getUniktid());
+                                var1 = b.getISBN();
+                                var2 = b.getNamn();
                             }
                         }
 
-                        System.out.println("Vilken bok vill du lämna tillbaka? Ange Bok-ID");
-                        int lamnatillbakabok = scan.nextInt();
-                        System.out.println("Hur många dagar sen var det du lånade boken?");
-                        int antalDagar = scan.nextInt();
+                                System.out.println("Vilken bok vill du lämna tillbaka? Ange Bok-ID");
+                                int lamnatillbakabok = scan.nextInt();
+                                System.out.println("Hur många dagar sen var det du lånade boken?");
+                                int antalDagar = scan.nextInt();
 
-                        if (antalDagar >= 15) {
-                            addWarning(dittID);
-                        }
+                                if (antalDagar >= 15) {
+                                    addWarning(dittID);
+                                }
+
+                                addBook(lamnatillbakabok, var1, var2);
+
+                                taBortAnv("src\\Lana.txt", lamnatillbakabok, 1, ",");
 
 
-                        taBortAnv("src\\Lana.txt", lamnatillbakabok, 1, ",");
-                        break;
+
+
+                                    break;
+
+
 
 
                     case 3:
