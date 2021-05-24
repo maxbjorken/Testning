@@ -134,9 +134,9 @@ return nyttID;
                             while (rakning == 0) {
                                 System.out.println(" ");
                                 System.out.println("Vilken bok vill du låna? Ange Bok-id. Skriv 0 för att avbryta");
-                                logger.info("Starting");
+                                logger.info("Start: Lån av bok");
                                 int valet = scan.nextInt();
-                                logger.debug(String.format("valet=%d", valet));
+                                logger.debug(String.format("Val av bok = %d", valet));
                                 int rakna = 0;
 
                                 if (valet == 0) {
@@ -149,7 +149,7 @@ return nyttID;
 
                                                     System.out.println("Skriv ditt ID");
                                                     int id1 = scan.nextInt();
-                                                    logger.debug(String.format("id1=%d", id1));
+                                                    logger.debug(String.format("ID på låntagare=%d", id1));
                                                     for(Lend l : lendlista){
                                                         if (l.getId() == id1) {
                                                             rakna++;
@@ -157,22 +157,25 @@ return nyttID;
                                                         if (id1 > 999 && id1 < 2000){
                                                             if (rakna >= 3){
                                                                 System.out.println("Du har för många lån");
-                                                                logger.error("För många lån");
+                                                                logger.error("Error: För många lån");
                                                                 System.exit(0);
                                                             }
                                                         }else if (id1 > 1999 && id1 < 3000) {
                                                             if (rakna >= 5) {
                                                                 System.out.println("Du har för många lån");
+                                                                logger.error("Error: För många lån");
                                                                 System.exit(0);
                                                             }
                                                         }else if (id1 > 2999 && id1 < 4000) {
                                                             if (rakna >= 7) {
                                                                 System.out.println("Du har för många lån");
+                                                                logger.error("Error: För många lån");
                                                                 System.exit(0);
                                                             }
                                                         }else if (id1 > 3999 && id1 < 5000) {
                                                             if (rakna >= 5) {
                                                                 System.out.println("Du har för många lån");
+                                                                logger.error("Error: För många lån");
                                                                 System.exit(0);
                                                             }
                                                         }
@@ -191,7 +194,7 @@ return nyttID;
                                 if (rakning == 0) {
                                     System.out.println("Boken finns inte eller så har du skrivit fel! Försök igen");
                                 }
-                            } logger.info("Ended");
+                            } logger.info("Avslut: Lån av bok");
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
