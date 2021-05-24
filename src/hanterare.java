@@ -6,16 +6,19 @@ import java.util.Date;
 import java.util.Scanner;
 import java.io.*;
 import java.util.Random;
+<<<<<<< HEAD
+=======
 //import java.util.logging.Logger;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+>>>>>>> cdf25ff65831fc1398c0c8f5804e775b354271ac
+
+
+
 
 
 public class hanterare {
-
-    private static Logger logger = LogManager.getLogger(hanterare.class.getName());
-
     hanterareStore store = null;
     final double HoursPerMonth = 160.0;
 
@@ -134,9 +137,7 @@ return nyttID;
                             while (rakning == 0) {
                                 System.out.println(" ");
                                 System.out.println("Vilken bok vill du låna? Ange Bok-id. Skriv 0 för att avbryta");
-                                logger.info("Start: Lån av bok");
                                 int valet = scan.nextInt();
-                                logger.debug(String.format("Val av bok = %d", valet));
                                 int rakna = 0;
 
                                 if (valet == 0) {
@@ -146,10 +147,8 @@ return nyttID;
                                         if (b.getUniktid() == valet) {
                                             for (Book bok : boklista) {
                                                 if (b.getISBN() == bok.getISBN()) {
-
                                                     System.out.println("Skriv ditt ID");
                                                     int id1 = scan.nextInt();
-                                                    logger.debug(String.format("ID på låntagare=%d", id1));
                                                     for(Lend l : lendlista){
                                                         if (l.getId() == id1) {
                                                             rakna++;
@@ -157,25 +156,21 @@ return nyttID;
                                                         if (id1 > 999 && id1 < 2000){
                                                             if (rakna >= 3){
                                                                 System.out.println("Du har för många lån");
-                                                                logger.error("Error: För många lån");
                                                                 System.exit(0);
                                                             }
                                                         }else if (id1 > 1999 && id1 < 3000) {
                                                             if (rakna >= 5) {
                                                                 System.out.println("Du har för många lån");
-                                                                logger.error("Error: För många lån");
                                                                 System.exit(0);
                                                             }
                                                         }else if (id1 > 2999 && id1 < 4000) {
                                                             if (rakna >= 7) {
                                                                 System.out.println("Du har för många lån");
-                                                                logger.error("Error: För många lån");
                                                                 System.exit(0);
                                                             }
                                                         }else if (id1 > 3999 && id1 < 5000) {
                                                             if (rakna >= 5) {
                                                                 System.out.println("Du har för många lån");
-                                                                logger.error("Error: För många lån");
                                                                 System.exit(0);
                                                             }
                                                         }
@@ -188,15 +183,25 @@ return nyttID;
                                                     rakning++;
                                                 }
                                             }
+
+
+                                            // int nyIsbn = Integer.parseInt(String.valueOf(valet));
+
+
                                         }
+
+
                                     }
+
                                 }
                                 if (rakning == 0) {
                                     System.out.println("Boken finns inte eller så har du skrivit fel! Försök igen");
                                 }
-                            } logger.info("Avslut: Lån av bok");
+                            }
+
                         } catch (Exception e) {
                             e.printStackTrace();
+
                         }
 
 
