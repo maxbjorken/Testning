@@ -118,3 +118,6 @@
 2021-05-24 16:09:05,957 INFO hanterare [main] Inlogging i system
 2021-05-24 16:09:10,618 DEBUG hanterare [main] Anvandarnamn = User
 2021-05-24 16:09:10,618 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-24 17:16:04,283 INFO hanterare [main] Inlogging i system
+2021-05-24 17:16:06,414 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-24 17:16:06,414 INFO hanterare [main] Avslut inloggning i systemet
