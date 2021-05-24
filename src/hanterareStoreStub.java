@@ -14,7 +14,6 @@ public class hanterareStoreStub extends hanterareStore{
     public Book[] getAllBooks(Book[] books) {
         Book[] bookArr = new Book[bocker.size()];
         return bocker.toArray(bookArr);
-
     }
 
 }

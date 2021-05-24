@@ -2,6 +2,7 @@ import javax.annotation.processing.Filer;
 import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import java.io.*;
 import java.util.Random;
@@ -17,13 +18,21 @@ public class hanterare {
     public hanterare(hanterareStore trs) {
         store = trs;
     }
- /* public double getBooks(int uniktid, String name, int ISBN) {
 
+
+  public double getBooks(int uniktid, String name, int ISBN) {
+      float SumOfTheMonth = 0;
+
+      Date date = new Date(year-1900, month, 0);
+      Date date1 = new Date(year-1900, month, 31);
+
+
+      Book[] entities = store.getAllBooks()
 
     }
 
 
-  */
+
 
 
 
