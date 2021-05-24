@@ -11,6 +11,22 @@ import java.util.Random;
 
 
 public class hanterare {
+    hanterareStore store = null;
+    final double HoursPerMonth = 160.0;
+
+    public hanterare(hanterareStore trs) {
+        store = trs;
+    }
+ /* public double getBooks(int uniktid, String name, int ISBN) {
+
+
+    }
+
+
+  */
+
+
+
 
     public static void add(int id, String fornamn, String efternamn, long personnummer) throws IOException {
         hanterareStore.add(id, fornamn, efternamn, personnummer);
@@ -35,16 +51,23 @@ public class hanterare {
         hanterareStore.taBortAnv(filepath, removeTerm, posOfId, ",");
     }
 
+    public static void addWarning(int id) throws IOException {
+        hanterareStore.addWarning(id);
+    }
+
 
     public static void main(String[] args) throws IOException {
 
         ArrayList<Book> boklista = new ArrayList<>();
         ArrayList<User> userlista = new ArrayList<>();
         ArrayList<Lend> lendlista = new ArrayList<>();
+        ArrayList<Warnings> varningslista = new ArrayList<>();
+
 
         hanterareStore.lasaInBocker(boklista);
        hanterareStore.lasaInAnvandare(userlista);
        hanterareStore.lasaInLan(lendlista);
+       hanterareStore.lasaInVarning(varningslista);
 
         Scanner scan = new Scanner(System.in);
         System.out.println("**************************************");
@@ -165,9 +188,9 @@ public class hanterare {
                         break;
                     case 2:
                         System.out.println("Vilket är ditt ID?");
-                        int valavbok = scan.nextInt();
+                        int dittID = scan.nextInt();
                         for (Lend b : lendlista) {
-                            if (b.getId() == valavbok) {
+                            if (b.getId() == dittID) {
                                 for (Book bo : boklista) {
                                     if (bo.getISBN() == b.getISBN())
                                         System.out.println("Namn: " + bo.getName() + "   ISBN: " + b.getISBN() + " Bok-ID: " + bo.getUniktid());
@@ -177,6 +200,14 @@ public class hanterare {
 
                         System.out.println("Vilken bok vill du lämna tillbaka? Ange Bok-ID");
                         int lamnatillbakabok = scan.nextInt();
+                        System.out.println("Hur många dagar sen var det du lånade boken?");
+                        int antalDagar = scan.nextInt();
+
+                        if (antalDagar >= 15) {
+                            addWarning(dittID);
+                        }
+
+
                         taBortAnv("src\\Lana.txt", lamnatillbakabok, 1, ",");
                         break;
 

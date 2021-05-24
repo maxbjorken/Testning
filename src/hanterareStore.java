@@ -4,7 +4,42 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class hanterareStore {
+  /*  public Book[] getAllBooks(Book[] books) throws FileNotFoundException {
+
+       ArrayList<Book> books1= new ArrayList<>();
+        File Books = new File("src/Books.txt");
+        try (
+                Scanner output = new Scanner(Books)) {
+            output.useDelimiter(",");
+            while (output.hasNextLine()) {
+                int uniktid = Integer.parseInt(output.next());
+                int isbn = Integer.parseInt(output.next());
+                String sort = output.nextLine().replaceFirst(",", "");
+
+                Book bok = new Book(uniktid, sort, isbn);
+                books1.add(bok);
+                Book[] entries = new Book[0];
+                String[] bockerna = new String[0];
+int antal = 0;
+                for(Book b1: books1) {
+                    for (int i = 0; i >= books1.size(); i++) {
+                        bockerna[i] += bok.getName();
+                        antal++;
+                    }
+
+           return bockerna[];
+                }
+
+
+
+                /* Kod som hämtar tidregistreringar */
+
+
+
+
+
 
     public static void lasaInBocker(ArrayList<Book> lista) throws FileNotFoundException {
         File Books = new File("src/Books.txt");
@@ -57,6 +92,21 @@ public class hanterareStore {
 
     }
 
+    public static ArrayList<Warnings> lasaInVarning(ArrayList<Warnings> lista) throws FileNotFoundException {
+        File varning = new File("src/Warnings.txt");
+
+        try (Scanner output3 = new Scanner(varning)) {
+            output3.useDelimiter(",");
+            while (output3.hasNextLine()) {
+                int antal = Integer.parseInt(output3.next().replaceFirst(",",""));
+
+                Warnings warnings = new Warnings(antal);
+                lista.add(warnings);
+            }
+
+        } return (lista);
+    }
+
     public static void add(int id, String fornamn, String efternamn, long personnummer) throws IOException {
         User anvandare1 = new User(id, fornamn, efternamn, personnummer);
         System.out.println(anvandare1.getFirstName() + "    " + anvandare1.getLastName() + "    " + anvandare1.getPersonalNumber() + "      " + anvandare1.getId());
@@ -89,9 +139,17 @@ public class hanterareStore {
             pw.println();
             pw.close();
         }
-
-
     }
+
+    public static void addWarning(int id) throws IOException {
+        Warnings warnings = new Warnings(id);
+        FileWriter writeWarning = new FileWriter("src/Warnings.txt", true);
+        try (PrintWriter pw = new PrintWriter(writeWarning)) {
+            pw.print(id);
+            pw.println();
+        }
+    }
+
 
 
 
