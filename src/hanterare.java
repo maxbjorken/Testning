@@ -213,7 +213,7 @@ return nyttID;
 
                                 System.out.println("Vilken bok vill du lämna tillbaka? Ange Bok-ID");
                                 int lamnatillbakabok = scan.nextInt();
-                                System.out.println("Hur många dagar sen var det du lånade boken? ");
+                                System.out.println("Hur många dagar sen var det du lånade boken?  ");
                                 int antalDagar = scan.nextInt();
 
                                 if (antalDagar >= 15) {
