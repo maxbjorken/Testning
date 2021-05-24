@@ -312,9 +312,8 @@ return nyttID;
 
                /* for (User u : userlista) {
                     System.out.println("Namn: " + u.getFirstName() + " " + u.getLastName() + " Personnummer: " +
-                            u.getPersonalNumber() + " ID: " + u.getId());
+                        u.getPersonalNumber() + " ID: " + u.getId());
                 }
-
                 */
 
 
