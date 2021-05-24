@@ -40,5 +40,11 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="byte-buddy-1.9.12" level="project" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="log4j-api-2.11.2" level="project" />
+    <orderEntry type="library" name="Log4j2Lib" level="project" />
+    <orderEntry type="library" name="byte-buddy-1.9.121" level="project" />
+>>>>>>> cdf25ff65831fc1398c0c8f5804e775b354271ac
   </component>
 </module>
