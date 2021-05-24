@@ -7,10 +7,9 @@ import java.util.Scanner;
 
 public class hanterareStore {
 
-    public Book[] getAllBooks(Book[] books) {
+    public Book[] getAllBooks() {
         Book[] bok = new Book[0];
         return bok;
-
     }
   /*  public Book[] getAllBooks(Book[] books) throws FileNotFoundException {
 

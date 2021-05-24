@@ -1,6 +1,7 @@
 public class Book {
     private int ISBN;
     private String name;
+    private int uniktid;
 
     public int getUniktid() {
         return uniktid;
@@ -10,7 +11,7 @@ public class Book {
         this.uniktid = uniktid;
     }
 
-    private int uniktid;
+
 
     public Book(int uniktid, String name, int ISBN) {
         this.ISBN=ISBN;

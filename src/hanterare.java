@@ -20,15 +20,16 @@ public class hanterare {
     }
 
 
-  public double getBooks(int uniktid, String name, int ISBN) {
-      float SumOfTheMonth = 0;
+  public double returnIDifExists(int id) {
+int nyttID = 0;
+      Book[] entities = store.getAllBooks();
 
-      Date date = new Date(year-1900, month, 0);
-      Date date1 = new Date(year-1900, month, 31);
-
-
-      Book[] entities = store.getAllBooks()
-
+      for (Book b: entities) {
+          if (id == b.getUniktid()) {
+              nyttID = b.getUniktid();
+          }
+      }
+return nyttID;
     }
 
 
