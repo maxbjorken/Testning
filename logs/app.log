@@ -31,3 +31,6 @@
 2021-05-24 15:03:56,918 DEBUG hanterare [main] Val av bok = 1025
 2021-05-24 15:04:06,170 DEBUG hanterare [main] ID på låntagare=3110
 2021-05-24 15:04:06,171 ERROR hanterare [main] För många lån
+2021-05-25 09:12:36,885 INFO hanterare [main] Inlogging i system
+2021-05-25 09:12:39,382 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-25 09:12:39,382 INFO hanterare [main] Avslut inloggning i systemet
