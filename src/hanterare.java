@@ -132,7 +132,7 @@ return nyttID;
                             for (Book b : boklista) {
                                 System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN() + " Bok-id: " + b.getUniktid());
                             }
-                            while (rakning == 0) {
+
                                 System.out.println(" ");
                                 System.out.println("Vilken bok vill du låna? Ange Bok-id. Skriv 0 för att avbryta");
                                 logger.info("Starting");
@@ -140,61 +140,68 @@ return nyttID;
                                 logger.debug(String.format("LÅN: Bok-ID = %d", valet));
                                 int rakna = 0;
 
-                                if (valet == 0) {
-                                    rakning++;
-                                } else {
+
                                     for (Book b : boklista) {
                                         if (b.getUniktid() == valet) {
                                             for (Book bok : boklista) {
                                                 if (b.getISBN() == bok.getISBN()) {
 
+
                                                     System.out.println("Skriv ditt ID");
                                                     int id1 = scan.nextInt();
-                                                    logger.debug(String.format("Låntagares ID = %d", id1));
-                                                    for (Lend l : lendlista) {
-                                                        if (l.getId() == id1) {
+                                                    for (User u : userlista) {
+                                                        if (u.getId() == id1) {
                                                             rakna++;
                                                         }
-                                                        if (id1 > 999 && id1 < 2000) {
-                                                            if (rakna >= 3) {
-                                                                System.out.println("Du har för många lån");
-                                                                logger.error("För många lån");
-                                                                System.exit(0);
-                                                            }
-                                                        } else if (id1 > 1999 && id1 < 3000) {
-                                                            if (rakna >= 5) {
-                                                                System.out.println("Du har för många lån");
-                                                                logger.error("För många lån");
-                                                                System.exit(0);
-                                                            }
-                                                        } else if (id1 > 2999 && id1 < 4000) {
-                                                            if (rakna >= 7) {
-                                                                System.out.println("Du har för många lån");
-                                                                logger.error("För många lån");
-                                                                System.exit(0);
-                                                            }
-                                                        } else if (id1 > 3999 && id1 < 5000) {
-                                                            if (rakna >= 5) {
-                                                                System.out.println("Du har för många lån");
-                                                                logger.error("För många lån");
-                                                                System.exit(0);
-                                                            }
-                                                        }
-
                                                     }
-                                                    addLoan(b.getUniktid(), b.getISBN(), id1, b.getName());
-                                                    rakning++;
 
-                                                    taBortAnv("src\\Books.txt", b.getUniktid(), 1, ",");
+                                                    if (rakna > 0) {
+                                                        logger.debug(String.format("Låntagares ID = %d", id1));
+                                                        for (Lend l : lendlista) {
+                                                            if (l.getId() == id1) {
+                                                                rakna++;
+                                                            }
+                                                            if (id1 > 999 && id1 < 2000) {
+                                                                if (rakna >= 3) {
+                                                                    System.out.println("Du har för många lån");
+                                                                    logger.error("För många lån");
+                                                                    System.exit(0);
+                                                                }
+                                                            } else if (id1 > 1999 && id1 < 3000) {
+                                                                if (rakna >= 5) {
+                                                                    System.out.println("Du har för många lån");
+                                                                    logger.error("För många lån");
+                                                                    System.exit(0);
+                                                                }
+                                                            } else if (id1 > 2999 && id1 < 4000) {
+                                                                if (rakna >= 7) {
+                                                                    System.out.println("Du har för många lån");
+                                                                    logger.error("För många lån");
+                                                                    System.exit(0);
+                                                                }
+                                                            } else if (id1 > 3999 && id1 < 5000) {
+                                                                if (rakna >= 5) {
+                                                                    System.out.println("Du har för många lån");
+                                                                    logger.error("För många lån");
+                                                                    System.exit(0);
+                                                                }
+                                                            }
+
+                                                        }
+                                                        addLoan(b.getUniktid(), b.getISBN(), id1, b.getName());
+                                                        rakning++;
+
+                                                        taBortAnv("src\\Books.txt", b.getUniktid(), 1, ",");
+                                                    } else {
+                                                        System.out.println("Du finns inte med i systemet, skapa användare först!");
+                                                    }
                                                 }
                                             }
                                         }
                                     }
-                                }
-                                if (rakning == 0) {
-                                    System.out.println("Boken finns inte eller så har du skrivit fel! Försök igen");
-                                }
-                            }
+
+
+
                             logger.info("Ended");
                         } catch (Exception e) {
                             e.printStackTrace();

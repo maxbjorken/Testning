@@ -147,3 +147,21 @@
 2021-05-25 13:27:42,472 DEBUG hanterare [main] Registrera användare. Personnummer =19960331
 2021-05-25 13:27:44,172 DEBUG hanterare [main] Registrera användare. Roll =2
 2021-05-25 13:27:44,187 INFO hanterare [main] Slut: Registrera användare
+2021-05-25 13:40:27,939 INFO hanterare [main] Inlogging i system 
+2021-05-25 13:40:32,029 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-25 13:40:32,030 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-25 13:40:33,322 INFO hanterare [main] Starting
+2021-05-25 13:40:44,785 DEBUG hanterare [main] LÅN: Bok-ID = 9523
+2021-05-25 13:42:50,408 INFO hanterare [main] Inlogging i system 
+2021-05-25 13:42:58,135 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-25 13:42:58,136 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-25 13:43:06,442 INFO hanterare [main] Starting
+2021-05-25 13:43:11,189 DEBUG hanterare [main] LÅN: Bok-ID = 1153
+2021-05-25 13:43:19,498 INFO hanterare [main] Ended
+2021-05-25 13:43:30,598 INFO hanterare [main] Inlogging i system 
+2021-05-25 13:43:33,375 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-25 13:43:33,375 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-25 13:43:34,411 INFO hanterare [main] Starting
+2021-05-25 13:43:37,265 DEBUG hanterare [main] LÅN: Bok-ID = 1050
+2021-05-25 13:43:38,232 DEBUG hanterare [main] Låntagares ID = 3110
+2021-05-25 13:43:38,252 INFO hanterare [main] Ended

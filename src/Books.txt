@@ -1,7 +1,4 @@
-4433,858444, River Hello
 2355,77665533,The Karen History
 1153,3344332,Bok om frihet
-1050,199823,Mental Hälsa
 9523,12345, Services Innovation
-1603,192342,Minecraft
 11619,9384283,Var hur och varför
