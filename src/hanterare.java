@@ -8,8 +8,8 @@ import java.io.*;
 import java.util.Random;
 //import java.util.logging.Logger;
 
-import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class hanterare {
@@ -95,7 +95,6 @@ return nyttID;
         System.out.println("3  visa böcker");
         System.out.println(" ");
         System.out.println("9. Logga in som bibliotekarie");
-        System.out.println("magge");
         System.out.println();
         int val = scan.nextInt();
 
@@ -309,7 +308,7 @@ return nyttID;
             case 3:
 
                 for (Book b : boklista) {
-                    System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
+                    System.out.println("Namn : " + b.getName() + "   ISBN: " + b.getISBN());
                 }
 
                /* for (User u : userlista) {
