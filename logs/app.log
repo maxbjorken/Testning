@@ -121,3 +121,29 @@
 2021-05-24 17:16:04,283 INFO hanterare [main] Inlogging i system
 2021-05-24 17:16:06,414 DEBUG hanterare [main] Anvandarnamn = User
 2021-05-24 17:16:06,414 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-25 13:16:35,789 INFO hanterare [main] Inlogging i system
+2021-05-25 13:16:38,018 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-25 13:16:38,018 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-25 13:16:40,156 INFO hanterare [main] Start: Låna bok
+2021-05-25 13:16:45,652 DEBUG hanterare [main] LÅN: Låntagares ID= 3110
+2021-05-25 13:20:07,523 INFO hanterare [main] Inlogging i system
+2021-05-25 13:20:10,383 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-25 13:20:10,383 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-25 13:20:17,842 INFO hanterare [main] Starting
+2021-05-25 13:20:24,972 DEBUG hanterare [main] LÅN: Bok-ID = 1619
+2021-05-25 13:20:27,243 DEBUG hanterare [main] Låntagares ID = 3231
+2021-05-25 13:20:27,254 INFO hanterare [main] Ended
+2021-05-25 13:20:34,521 INFO hanterare [main] Inlogging i system
+2021-05-25 13:20:37,513 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-25 13:20:37,513 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-25 13:20:39,353 INFO hanterare [main] Start: Lämna tillbaka bok
+2021-05-25 13:20:53,827 DEBUG hanterare [main] Lämnatillbaka bok: Låntagares ID= 3231
+2021-05-25 13:20:59,902 DEBUG hanterare [main] Lämnatillbaka bok: Bokens ID = 11619
+2021-05-25 13:21:15,592 DEBUG hanterare [main] Lämnatillbaka bok: Antal dagar utlånad= 12
+2021-05-25 13:21:15,592 INFO hanterare [main] Slut: Lämna tillbaka bok
+2021-05-25 13:27:31,787 INFO hanterare [main] Start: Registrera användare
+2021-05-25 13:27:34,432 DEBUG hanterare [main] Registrera användare. Förnamn =Anton
+2021-05-25 13:27:35,934 DEBUG hanterare [main] Registrera användare. Efternamn =Johansson
+2021-05-25 13:27:42,472 DEBUG hanterare [main] Registrera användare. Personnummer =19960331
+2021-05-25 13:27:44,172 DEBUG hanterare [main] Registrera användare. Roll =2
+2021-05-25 13:27:44,187 INFO hanterare [main] Slut: Registrera användare
