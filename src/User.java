@@ -38,7 +38,7 @@ public class User {
         return personalNumber;
     }
 
-    public void setPersonalNumber(int personalNumber) {
+    public void setPersonalNumber(long personalNumber) {
         this.personalNumber = personalNumber;
     }
 

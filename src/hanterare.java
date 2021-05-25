@@ -24,7 +24,7 @@ public class hanterare {
     }
 
 
-  public double returnIDifExists(int id) {
+  public int returnIDifExists(int id) {
 int nyttID = 0;
       Book[] entities = store.getAllBooks();
 
@@ -35,6 +35,30 @@ int nyttID = 0;
       }
 return nyttID;
     }
+
+    public int returnIfLendExists(int id) {
+        int nyttID = 0;
+        Lend[] entities = store.getAllLoans();
+
+        for(Lend l: entities) {
+            if (id == l.getUniktid()) {
+                nyttID = l.getUniktid();
+            }
+        } return nyttID;
+    }
+
+    public long returnIfUserExists(long id) {
+        int nyttID = 0;
+       User[] entities = store.getAllUsers();
+
+       for(User u: entities) {
+           if (id == u.getId()) {
+               nyttID = u.getId();
+           }
+       } return nyttID;
+
+    }
+
 
 
 

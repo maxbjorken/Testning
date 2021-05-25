@@ -9,16 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class hanterareStoreTest {
 
-    @Test
-    void TestaddBook_usingMockito() throws IOException {
-        hanterareStore trs = mock(hanterareStore.class);
-        hanterare cut = new hanterare(trs);
-    }
-
-    @Test
-    void addBook() {
-    }
-
 
 @Test
     void testAddBooks() {
@@ -36,8 +26,34 @@ class hanterareStoreTest {
 
     }
 
+    @Test
+    void testAddLoan() {
+        hanterareStoreStub stub = new hanterareStoreStub();
+        hanterare cut = new hanterare(stub);
+
+        stub.lends.add(new Lend(2321, 3110, 9434234, "Sagan Om Ringen"));
+        stub.lends.add(new Lend(2912, 3112, 3239239,"History of Europe"));
+        stub.lends.add(new Lend(9833, 3021, 393943, "Service Innovation"));
+        stub.lends.add(new Lend(1423, 4214, 294214,"Växjö"));
+
+        assertEquals(1423, cut.returnIfLendExists(1423));
+
+    }
+        @Test
+    void testAddUser() {
+            hanterareStoreStub stub = new hanterareStoreStub();
+            hanterare cut = new hanterare(stub);
+
+            stub.users.add(new User(2929, "Max", "Björk", 13371337));
+            stub.users.add(new User(4089, "Lukas", "Örnros", 902201493));
+            stub.users.add(new User(2319, "Anton", "Johansson", 872342435));
+            stub.users.add(new User(1919, "Tobias", "Johansson", 1234677));
 
 
+            assertEquals(1919, cut.returnIfUserExists(1919));
+
+
+        }
 
 
 }

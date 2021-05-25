@@ -11,6 +11,16 @@ public class hanterareStore {
         Book[] bok = new Book[0];
         return bok;
     }
+
+    public Lend[] getAllLoans() {
+        Lend [] lan = new Lend[0];
+        return lan;
+    }
+
+    public User[] getAllUsers() {
+        User [] user = new User[0];
+        return user;
+    }
   /*  public Book[] getAllBooks(Book[] books) throws FileNotFoundException {
 
        ArrayList<Book> books1= new ArrayList<>();
@@ -137,7 +147,7 @@ int antal = 0;
 
 
     public static void addLoan(int uniktID, int id, int ISBN, String namn) throws IOException {
-        Lend nyLend = new Lend(id, ISBN);
+
        // System.out.println(nyLend.id + nyLend.ISBN);
         FileWriter writeLend = new FileWriter("src/Lana.txt", true);
         try (PrintWriter pw = new PrintWriter(writeLend)) {

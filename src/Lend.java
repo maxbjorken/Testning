@@ -24,10 +24,12 @@ public class Lend {
 
     public Lend() {};
 
-    public Lend(int id, int ISBN) {
+   /* public Lend(int id, int ISBN) {
         this.id = id;
         this.ISBN = ISBN;
     }
+
+    */
 
 
     public Lend(int uniktid, int id, int isbn, String namn) {
