@@ -8,8 +8,8 @@ import java.io.*;
 import java.util.Random;
 //import java.util.logging.Logger;
 
-import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class hanterare {
@@ -87,14 +87,14 @@ return nyttID;
         System.out.println("**************************************");
         System.out.println("Välkommen till Hultsfred Stadsbibliotek");
         System.out.println("**************************************");
+        System.out.println("Rattata");
 
         System.out.println("Välj ditt val (1 eller 2)");
         System.out.println("1. Låna/Lämna tillbaka bok");
         System.out.println("2. Registrera dig!");
-        System.out.println("3  visa böcker");
+        System.out.println("3  Visa böcker");
         System.out.println(" ");
         System.out.println("9. Logga in som bibliotekarie");
-        System.out.println("magge");
         System.out.println();
         int val = scan.nextInt();
 
@@ -137,7 +137,7 @@ return nyttID;
                                 System.out.println("Vilken bok vill du låna? Ange Bok-id. Skriv 0 för att avbryta");
                                 logger.info("Starting");
                                 int valet = scan.nextInt();
-                                logger.debug(String.format("valet=%d", valet));
+                                logger.debug(String.format("LÅN: Bok-ID = %d", valet));
                                 int rakna = 0;
 
                                 if (valet == 0) {
@@ -150,7 +150,7 @@ return nyttID;
 
                                                     System.out.println("Skriv ditt ID");
                                                     int id1 = scan.nextInt();
-                                                    logger.debug(String.format("id1=%d", id1));
+                                                    logger.debug(String.format("Låntagares ID = %d", id1));
                                                     for (Lend l : lendlista) {
                                                         if (l.getId() == id1) {
                                                             rakna++;
@@ -164,16 +164,19 @@ return nyttID;
                                                         } else if (id1 > 1999 && id1 < 3000) {
                                                             if (rakna >= 5) {
                                                                 System.out.println("Du har för många lån");
+                                                                logger.error("För många lån");
                                                                 System.exit(0);
                                                             }
                                                         } else if (id1 > 2999 && id1 < 4000) {
                                                             if (rakna >= 7) {
                                                                 System.out.println("Du har för många lån");
+                                                                logger.error("För många lån");
                                                                 System.exit(0);
                                                             }
                                                         } else if (id1 > 3999 && id1 < 5000) {
                                                             if (rakna >= 5) {
                                                                 System.out.println("Du har för många lån");
+                                                                logger.error("För många lån");
                                                                 System.exit(0);
                                                             }
                                                         }
@@ -202,8 +205,11 @@ return nyttID;
                     case 2:
                         int var1 = 0;
                         String var2 = null;
+                        logger.info("Start: Lämna tillbaka bok");
                         System.out.println("Vilket är ditt ID?");
+
                         int dittID = scan.nextInt();
+                        logger.debug(String.format("Lämnatillbaka bok: Låntagares ID = %d", dittID));
                         for (Lend b : lendlista) {
                             if (b.getId() == dittID) {
                                 System.out.println("Namn: " + b.getNamn() + "   ISBN: " + b.getISBN() + " Bok-ID: " + b.getUniktid());
@@ -214,8 +220,10 @@ return nyttID;
 
                                 System.out.println("Vilken bok vill du lämna tillbaka? Ange Bok-ID");
                                 int lamnatillbakabok = scan.nextInt();
+                                logger.debug(String.format("Lämnatillbaka bok: Bokens ID = %d", lamnatillbakabok));
                                 System.out.println("Hur många dagar sen var det du lånade boken?  ");
                                 int antalDagar = scan.nextInt();
+                                logger.debug(String.format("Lämnatillbaka bok: Antal dagar utlånad = %d", antalDagar));
 
                                 if (antalDagar >= 15) {
                                     addWarning(dittID);
@@ -224,6 +232,7 @@ return nyttID;
                                 addBook(lamnatillbakabok, var1, var2);
 
                                 taBortAnv("src\\Lana.txt", lamnatillbakabok, 1, ",");
+                                logger.info("Slut: Lämna tillbaka bok");
 
 
 
@@ -244,15 +253,20 @@ return nyttID;
 
 
             case 2:
+                logger.info("Start: Registrera användare");
                 System.out.println("Registrera");
                 System.out.println("Ange ditt Förnamn");
                 String firstName = scan.next();
+                logger.debug(String.format("Registrera användare. Förnamn = %s",firstName ));
 
                 System.out.println("Ange ditt efternamn");
                 String lastName = scan.next();
+                logger.debug(String.format("Registrera användare. Efternamn = %s",lastName));
+
 
                 System.out.println("Ange ditt personnummer");
                 long personalNumber = scan.nextLong();
+                logger.debug(String.format("Registrera användare. Personnummer = %d",personalNumber ));
 
                 for (User l : userlista){
                     if (l.getFirstName().equals(firstName) && l.getLastName().equals(lastName) && l.getPersonalNumber() == personalNumber){
@@ -268,9 +282,12 @@ return nyttID;
                 System.out.println("PhD student = 3");
                 System.out.println("Teacher = 4");
 
+
                 int val1 = scan.nextInt();
+                logger.debug(String.format("Registrera användare. Roll = %s",val1 ));
 
                 switch (val1) {
+
                     case 1:
                         int summan = idrakna(1000);
                         System.out.println("Här är ditt ID = " + summan);
@@ -303,12 +320,13 @@ return nyttID;
                         break;
 
                 }
+                logger.info("Slut: Registrera användare");
                 break;
 
             case 3:
 
                 for (Book b : boklista) {
-                    System.out.println("Namn: " + b.getName() + "   ISBN: " + b.getISBN());
+                    System.out.println("Namn : " + b.getName() + "   ISBN: " + b.getISBN());
                 }
 
                /* for (User u : userlista) {
