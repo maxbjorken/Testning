@@ -87,6 +87,7 @@ return nyttID;
         System.out.println("**************************************");
         System.out.println("Välkommen till Hultsfred Stadsbibliotek");
         System.out.println("**************************************");
+        System.out.println("Rattata");
 
         System.out.println("Välj ditt val (1 eller 2)");
         System.out.println("1. Låna/Lämna tillbaka bok");
