@@ -165,3 +165,132 @@
 2021-05-25 13:43:37,265 DEBUG hanterare [main] LÅN: Bok-ID = 1050
 2021-05-25 13:43:38,232 DEBUG hanterare [main] Låntagares ID = 3110
 2021-05-25 13:43:38,252 INFO hanterare [main] Ended
+2021-05-26 09:24:32,771 INFO hanterare [main] Inlogging i system 
+2021-05-26 09:24:36,220 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 09:24:36,220 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 09:24:37,754 INFO hanterare [main] Start: Lämna tillbaka bok
+2021-05-26 09:24:39,222 DEBUG hanterare [main] Lämnatillbaka bok: Låntagares ID = 3110
+2021-05-26 09:24:47,118 DEBUG hanterare [main] Lämnatillbaka bok: Bokens ID = 1050
+2021-05-26 09:24:48,982 DEBUG hanterare [main] Lämnatillbaka bok: Antal dagar utlånad = 20
+2021-05-26 09:24:48,994 INFO hanterare [main] Slut: Lämna tillbaka bok
+2021-05-26 09:30:30,235 INFO hanterare [main] Inlogging i system 
+2021-05-26 09:30:32,195 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 09:30:32,195 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 09:30:33,546 INFO hanterare [main] Start: Lämna tillbaka bok
+2021-05-26 09:30:35,175 DEBUG hanterare [main] Lämnatillbaka bok: Låntagares ID = 3110
+2021-05-26 09:31:22,937 INFO hanterare [main] Inlogging i system 
+2021-05-26 09:31:25,709 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 09:31:25,709 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 09:31:29,686 INFO hanterare [main] Starting
+2021-05-26 09:31:38,015 DEBUG hanterare [main] LÅN: Bok-ID = 1050
+2021-05-26 09:31:42,937 DEBUG hanterare [main] Låntagares ID = 3110
+2021-05-26 09:31:42,954 INFO hanterare [main] Ended
+2021-05-26 09:31:53,147 INFO hanterare [main] Inlogging i system 
+2021-05-26 09:31:57,272 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 09:31:57,273 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 09:32:12,712 INFO hanterare [main] Start: Lämna tillbaka bok
+2021-05-26 09:32:15,737 DEBUG hanterare [main] Lämnatillbaka bok: Låntagares ID = 3110
+2021-05-26 09:32:19,624 DEBUG hanterare [main] Lämnatillbaka bok: Bokens ID = 1050
+2021-05-26 09:32:22,097 DEBUG hanterare [main] Lämnatillbaka bok: Antal dagar utlånad = 16
+2021-05-26 09:32:22,109 INFO hanterare [main] Slut: Lämna tillbaka bok
+2021-05-26 09:33:16,059 INFO hanterare [main] Inlogging i system 
+2021-05-26 09:33:18,331 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 09:33:18,331 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 09:33:19,565 INFO hanterare [main] Starting
+2021-05-26 09:33:21,417 DEBUG hanterare [main] LÅN: Bok-ID = 1050
+2021-05-26 09:33:23,305 DEBUG hanterare [main] Låntagares ID = 3110
+2021-05-26 09:33:23,321 INFO hanterare [main] Ended
+2021-05-26 09:33:31,407 INFO hanterare [main] Inlogging i system 
+2021-05-26 09:33:33,341 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 09:33:33,342 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 09:33:37,401 INFO hanterare [main] Start: Lämna tillbaka bok
+2021-05-26 09:33:46,227 DEBUG hanterare [main] Lämnatillbaka bok: Låntagares ID = 3110
+2021-05-26 09:33:48,203 DEBUG hanterare [main] Lämnatillbaka bok: Bokens ID = 1050
+2021-05-26 09:33:50,026 DEBUG hanterare [main] Lämnatillbaka bok: Antal dagar utlånad = 20
+2021-05-26 09:33:50,054 INFO hanterare [main] Slut: Lämna tillbaka bok
+2021-05-26 09:41:40,845 INFO hanterare [main] Start: Registrera användare
+2021-05-26 09:41:43,076 DEBUG hanterare [main] Registrera användare. Förnamn = Max
+2021-05-26 09:41:45,830 DEBUG hanterare [main] Registrera användare. Efternamn = Skurk
+2021-05-26 09:41:48,628 DEBUG hanterare [main] Registrera användare. Personnummer = 48324953
+2021-05-26 09:42:10,908 DEBUG hanterare [main] Registrera användare. Roll = 3
+2021-05-26 09:42:10,931 INFO hanterare [main] Slut: Registrera användare
+2021-05-26 09:53:57,030 INFO hanterare [main] Inlogging i system 
+2021-05-26 09:54:11,834 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 09:54:11,834 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 09:54:17,339 INFO hanterare [main] Starting
+2021-05-26 09:54:57,051 INFO hanterare [main] Inlogging i system 
+2021-05-26 09:54:58,827 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 09:54:58,827 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 09:55:00,161 INFO hanterare [main] Starting
+2021-05-26 09:55:49,898 INFO hanterare [main] Inlogging i system 
+2021-05-26 09:55:52,288 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 09:55:52,288 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 09:55:52,926 INFO hanterare [main] Starting
+2021-05-26 10:07:47,705 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:07:50,100 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 10:07:50,101 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 10:07:55,753 INFO hanterare [main] Start: Lämna tillbaka bok
+2021-05-26 10:07:58,816 DEBUG hanterare [main] Lämnatillbaka bok: Låntagares ID = 3110
+2021-05-26 10:08:13,259 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:08:15,226 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 10:08:15,227 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 10:08:19,812 INFO hanterare [main] Starting
+2021-05-26 10:08:24,201 DEBUG hanterare [main] LÅN: Bok-ID = 1153
+2021-05-26 10:08:26,726 INFO hanterare [main] Ended
+2021-05-26 10:08:49,396 INFO hanterare [main] Start: Registrera användare
+2021-05-26 10:08:52,167 DEBUG hanterare [main] Registrera användare. Förnamn = Max
+2021-05-26 10:08:53,288 DEBUG hanterare [main] Registrera användare. Efternamn = Björk
+2021-05-26 10:08:57,289 DEBUG hanterare [main] Registrera användare. Personnummer = 98223312
+2021-05-26 10:08:58,732 DEBUG hanterare [main] Registrera användare. Roll = 1
+2021-05-26 10:08:58,756 INFO hanterare [main] Slut: Registrera användare
+2021-05-26 10:09:22,568 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:09:24,839 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 10:09:24,840 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 10:09:26,120 INFO hanterare [main] Starting
+2021-05-26 10:09:30,459 DEBUG hanterare [main] LÅN: Bok-ID = 11619
+2021-05-26 10:09:32,652 DEBUG hanterare [main] Låntagares ID = 1510
+2021-05-26 10:09:32,670 INFO hanterare [main] Ended
+2021-05-26 10:09:48,246 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:09:50,699 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 10:09:50,700 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 10:09:52,082 INFO hanterare [main] Start: Lämna tillbaka bok
+2021-05-26 10:09:54,845 DEBUG hanterare [main] Lämnatillbaka bok: Låntagares ID = 1510
+2021-05-26 10:09:57,806 DEBUG hanterare [main] Lämnatillbaka bok: Bokens ID = 11619
+2021-05-26 10:09:59,501 DEBUG hanterare [main] Lämnatillbaka bok: Antal dagar utlånad = 20
+2021-05-26 10:09:59,519 INFO hanterare [main] Slut: Lämna tillbaka bok
+2021-05-26 10:12:50,226 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:12:52,625 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 10:12:52,626 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 10:12:54,184 INFO hanterare [main] Starting
+2021-05-26 10:13:01,539 DEBUG hanterare [main] LÅN: Bok-ID = 1153
+2021-05-26 10:13:04,829 INFO hanterare [main] Ended
+2021-05-26 10:14:01,403 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:14:04,556 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 10:14:04,556 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 10:14:06,389 INFO hanterare [main] Starting
+2021-05-26 10:14:15,251 DEBUG hanterare [main] LÅN: Bok-ID = 9523
+2021-05-26 10:14:17,968 DEBUG hanterare [main] Låntagares ID = 1510
+2021-05-26 10:14:17,969 ERROR hanterare [main] För många lån
+2021-05-26 10:15:09,854 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:15:14,019 DEBUG hanterare [main] Anvandarnamn = uSER
+2021-05-26 10:15:22,694 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:15:27,557 DEBUG hanterare [main] Anvandarnamn = User
+2021-05-26 10:15:27,557 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 10:15:35,035 INFO hanterare [main] Start: Lämna tillbaka bok
+2021-05-26 10:15:37,474 DEBUG hanterare [main] Lämnatillbaka bok: Låntagares ID = 1510
+2021-05-26 10:15:41,002 DEBUG hanterare [main] Lämnatillbaka bok: Bokens ID = 6321
+2021-05-26 10:15:42,271 DEBUG hanterare [main] Lämnatillbaka bok: Antal dagar utlånad = 1
+2021-05-26 10:15:42,283 INFO hanterare [main] Slut: Lämna tillbaka bok
+2021-05-26 10:26:42,166 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:27:10,750 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:27:23,841 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:29:18,911 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:31:20,563 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:32:40,940 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:33:18,126 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:35:22,930 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:35:26,469 DEBUG hanterare [main] Anvandarnamn = 1510
+2021-05-26 10:35:26,469 INFO hanterare [main] Avslut inloggning i systemet
+2021-05-26 10:36:33,966 INFO hanterare [main] Inlogging i system 
+2021-05-26 10:36:35,539 DEBUG hanterare [main] Anvandarnamn = 1510
+2021-05-26 10:36:35,539 INFO hanterare [main] Avslut inloggning i systemet
